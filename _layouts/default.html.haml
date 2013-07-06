@@ -1,0 +1,112 @@
+!!!5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title #{site.title}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "A Lightweight Performance Testing Framework PerfCake", :name => "description"}/
+    %meta{:content => "Apache License 2.0 - Copyright since 2010 by the original author or authors", :name => "copyright"}/
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %link{:href => "#{site.base_url}/stylesheets/bootstrap.min.css", :rel => "stylesheet", :type=>'text/css'}/
+    %link{:href => "#{site.base_url}/stylesheets/bootstrap-responsive.min.css", :rel => "stylesheet", :type=>'text/css'}/
+    %link{:href => "#{site.base_url}/stylesheets/font-awesome.min.css", :rel => "stylesheet", :type=>'text/css'}/
+    %link{:href => "#{site.base_url}/stylesheets/bootswatch.css", :rel => "stylesheet", :type=>'text/css'}/
+    %link{:href => "#{site.base_url}/images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "#{site.base_url}/images/favicon.ico", :rel => "icon"}/
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42279823-1', 'perfcake.org');
+      ga('send', 'pageview');
+  %body#top.preview{"data-offset" => "80", "data-spy" => "scroll", "data-target" => ".subnav"}
+    /
+      Navbar
+      \==================================================
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#{site.base_url}"} PerfCake
+          #main-menu.nav-collapse.collapse
+            %ul#main-menu-left.nav
+              %li
+                %a{:href => "http://perfcake.blogspot.com", :onclick => "pageTracker._link(this.href); return false;", :target => "_blank", :rel => "tooltip", :title => "Read our blog"} News
+              %li
+                %a#swatch-link{:href => "community", :rel => "tooltip", :title => "Learn about the community, how to contribute, etc." } Community
+              %li
+                %a#swatch-link{:href => "quickstart", :rel => "tooltip", :title => "Run your first benchmark in 5 minutes" } Get started!
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Guides
+                  %b.caret
+                %ul#swatch-menu.dropdown-menu
+                  %li
+                    %a{:href => "guide/started"} Getting started guide
+                  %li.divider
+                  %li
+                    %a{:href => "guide/user"} Users guide
+                  %li
+                    %a{:href => "guide/devel"} Developers guide
+              %li#preview-menu.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Download
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "download/distro", :target => "_blank"} Binary distribution
+                  %li
+                    %a{:href => "download/distro+jdk", :target => "_blank"} Binary distribution including JDK
+            %form.navbar-search.pull-left{:action => ""}
+              %input.search-query.span2{:placeholder => "Search", :type => "text"}/
+            %ul#main-menu-right.nav.pull-right
+              %li
+                %a{:href => "support", :rel => "tooltip", :title => "Get some help improving performance of your applications"}
+                  %strong Get support!
+                  %i.icon-share-alt
+
+
+    %div.container
+      ~ content
+      /
+        Footer
+        \==================================================
+      %hr/
+      %footer#footer
+        %p.pull-right
+          %a{:href => "#top"} Back to top
+        .links
+          %a{:href => "http://perfcake.blogspot.com"} Blog
+          %a{:href => "http://perfcake.blogspot.com/feeds/posts/default"} Atom
+          %a{:href => "https://twitter.com/perfcaketool"} Twitter
+          %a{:href => "https://github.com/PerfCake"} GitHub
+          %a{:href => "#{site.base_url}/javadoc"} API
+        Code licensed under the
+        = succeed "." do
+          %a{:href => "http://www.apache.org/licenses/LICENSE-2.0"} Apache License v2.0
+        %br/
+        Based on
+        = succeed "." do
+          %a{:href => "http://twitter.github.com/bootstrap/"} Bootstrap
+        Baked by
+        = succeed "." do
+          %a{:href => "http://awestruct.org/"} Awestruct
+        Web fonts from
+        = succeed "." do
+          %a{:href => "http://www.google.com/webfonts"} Google
+        Design by
+        = succeed "." do
+          %a{:href => "http://thomaspark.me/"} Thomas Park
+        %br/
+        &copy; Copyright PerfCake 2011-#{Date.today.year}
+
+    %script{:type=>'text/javascript', :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    %script{:type=>'text/javascript', :src => "#{site.base_url}/javascripts/jquery.smooth-scroll.min.js"}
+    %script{:type=>'text/javascript', :src => "#{site.base_url}/javascripts/bootstrap.min.js"}
+    %script{:type=>'text/javascript', :src => "#{site.base_url}/javascripts/bootswatch.js"}

@@ -1,0 +1,56 @@
+---
+layout: default
+---
+%header#overview.jumbotron.subhead
+  .row
+    .span6
+      %span{:style => "float: left; margin: 0 15px 10px 0;"}
+        %img{:src => "images/logo.mid.png"}/
+      %h1 PerfCake
+      %p.lead A Lightweight Performance Testing Framework.
+    .span6
+      .well{:style => "padding: 25px 25px 15px 25px;"}
+        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Make Your Application Fast!
+        %span{:style => "display: block;"} Read the study how you could make your application really fast using PerfCake.
+        %div{:style => "clear:both"}
+  .subnav
+    %ul.nav.nav-pills
+      %li
+        %a{:href => "#typography"} Typography
+      %li
+        %a{:href => "#navbar"} Navbar
+      %li
+        %a{:href => "#buttons"} Buttons
+      %li
+        %a{:href => "#forms"} Forms
+      %li
+        %a{:href => "#tables"} Tables
+      %li
+        %a{:href => "#miscellaneous"} Miscellaneous
+
+%section#typography
+  .page-header
+    %h1 You are awestruct!
+
+  %p This site is all setup to use Bootstrap 2 with Awestruct.
+  %p
+    %a.btn.btn-primary.btn-large{ :href=>'http://awestruct.org' }
+      %i.icon-info-sign.icon-white
+      Learn more &raquo;
+.row
+  .span4
+    %h2 About
+    %p Awestruct is a framework for creating static HTML sites. It's inspired by the awesome Jekyll utility in the same genre.
+    %p Additionally, Awestruct integrates technologies such as Compass, Markdown and Haml.
+    %p
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+  .span4
+    %h2 Goal
+    %p The goal of Awestruct is to make it trivially easy to bake out non-trivial static websites. In addition to providing template-driven site creation (using Haml), Awestruct provides facilities for easily priming the site creation with additional non-page data.
+    %p
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+  .span4
+    %h2 Concept
+    %p The core concept of Awestruct is that of structures, specifically Ruby OpenStruct structures. The struct aspect allows arbitrary, schema-less data to be associated with a specific page or the entire site.
+    %p
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
