@@ -11,6 +11,8 @@
     %link{:href => "#{site.base_url}/stylesheets/bootstrap.min.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/stylesheets/bootstrap-responsive.min.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/stylesheets/font-awesome.min.css", :rel => "stylesheet", :type=>'text/css'}/
+    /[if IE 7]
+      %link{:href => "#{site.base_url}/stylesheets/font-awesome-ie7.min.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/stylesheets/bootswatch.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/images/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "#{site.base_url}/images/favicon.ico", :rel => "icon"}/
@@ -48,32 +50,35 @@
                   %b.caret
                 %ul#swatch-menu.dropdown-menu
                   %li
-                    %a{:href => "guide/started"} Getting started guide
+                    %a{:href => "#{site.base_url}/guide/started"} Getting started guide
                   %li.divider
                   %li
-                    %a{:href => "guide/user"} Users guide
+                    %a{:href => "#{site.base_url}/guide/user"} Users guide
                   %li
-                    %a{:href => "guide/devel"} Developers guide
+                    %a{:href => "#{site.base_url}/guide/devel"} Developers guide
               %li#preview-menu.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   Download
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{:href => "download/distro", :target => "_blank"} Binary distribution
+                    %a{:href => "#{site.base_url}/download/distro", :target => "_blank"} Binary distribution
                   %li
-                    %a{:href => "download/distro+jdk", :target => "_blank"} Binary distribution including JDK
-            %form.navbar-search.pull-left{:action => ""}
-              %input.search-query.span2{:placeholder => "Search", :type => "text"}/
+                    %a{:href => "#{site.base_url}/download/distro+jdk", :target => "_blank"} Binary distribution including JDK
+            %form.navbar-search.pull-left{:action => "http://www.google.com/search", :target => "_blank"}
+              %input{:type => "hidden", :name => "sitesearch", :value => "perfcake.org"}
+              %input.search-query.span2{:name => "q", :placeholder => "Search", :type => "text"}/
             %ul#main-menu-right.nav.pull-right
               %li
-                %a{:href => "support", :rel => "tooltip", :title => "Get some help improving performance of your applications"}
+                %a{:href => "#{site.base_url}/support", :rel => "tooltip", :title => "Get some help improving performance of your applications"}
                   %strong Get support!
                   %i.icon-share-alt
 
 
     %div.container
       ~ content
+
+      
       /
         Footer
         \==================================================
@@ -91,15 +96,30 @@
         = succeed "." do
           %a{:href => "http://www.apache.org/licenses/LICENSE-2.0"} Apache License v2.0
         %br/
+        Website and docs licensed under
+        = succeed "." do
+          %a{:href => "http://creativecommons.org/licenses/by/3.0/"} CC BY 3.0
+        %br/
+        %i.icon-fire
+        &nbsp;
         Based on
         = succeed "." do
           %a{:href => "http://twitter.github.com/bootstrap/"} Bootstrap
         Baked by
         = succeed "." do
           %a{:href => "http://awestruct.org/"} Awestruct
+        %br/
+        %i.icon-font
+        &nbsp;
         Web fonts from
         = succeed "." do
           %a{:href => "http://www.google.com/webfonts"} Google
+        Icons from
+        = succeed "." do
+          %a{:href => "http://fortawesome.github.io/Font-Awesome"} Font Awesome
+        %br/
+        %i.icon-pencil
+        &nbsp;
         Design by
         = succeed "." do
           %a{:href => "http://thomaspark.me/"} Thomas Park

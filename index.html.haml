@@ -5,13 +5,16 @@ layout: default
   .row
     .span6
       %span{:style => "float: left; margin: 0 15px 10px 0;"}
-        %img{:src => "images/logo.mid.png"}/
-      %h1 PerfCake
+        %a.header{:href => "#{site.base_url}"}
+          %img{:src => "#{site.base_url}/images/logo.mid.png"}/
+      %h1 
+        %a.header{:href => "#{site.base_url}"} PerfCake
       %p.lead A Lightweight Performance Testing Framework.
     .span6
       .well{:style => "padding: 25px 25px 15px 25px;"}
-        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Make Your Application Fast!
-        %span{:style => "display: block;"} Read the study how you could make your application really fast using PerfCake.
+        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Time is money and performance matters!
+        %span{:style => "display: block;"} Do not let your customers waiting and know where the pain points of your application is. PerfCake is not only a performance testing framework. It is also a load generator and a sophisticated response validator. 
+        %a{:href => "#about"} Learn more...
         %div{:style => "clear:both"}
   .subnav
     %ul.nav.nav-pills
@@ -27,7 +30,7 @@ layout: default
         %a{:href => "#tables"} Tables
       %li
         %a{:href => "#miscellaneous"} Miscellaneous
-
+ 
 %section#typography
   .page-header
     %h1 You are awestruct!
@@ -54,3 +57,31 @@ layout: default
     %p The core concept of Awestruct is that of structures, specifically Ruby OpenStruct structures. The struct aspect allows arbitrary, schema-less data to be associated with a specific page or the entire site.
     %p
       %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+
+.row
+  .span4
+    %h2 Learn
+    %ul
+      %li 
+        %a{:href => "#{site.base_url}/quickstart"} Getting started!
+      %li
+        %a{:href => "#{site.base_url}/guide"} Guides
+  .span4
+    %h2 Get Involved
+    %ul
+      %li 
+        %a{:href => "#{site.base_url}/community"} Community
+      %li
+        %a{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"} Contributing Guidelines
+      %li 
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
+      %li 
+        %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
+  .span4
+    %h2 Stay Informed
+    %ul
+      %li 
+        %a{:href => "https://twitter.com/#!/search/#perfcaketool", :alt => "Browse the #perfcaketool on Twitter", :target => "_blank"} Watch us on Twitter
+      %li
+        %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
+

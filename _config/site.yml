@@ -4,6 +4,6 @@ org: PerfCake.org
 base_url: '.'
 profiles:
   development:
-    base_url: '.'
+    base_url: '/'
   production:
     base_url: 'http://www.perfcake.org'

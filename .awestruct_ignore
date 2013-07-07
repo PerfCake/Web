@@ -3,3 +3,4 @@ Rakefile
 index.html
 stylesheets/*.less
 README.md
+web.sublime*
