@@ -53,18 +53,14 @@
                     %a{:href => "#{site.base_url}/guide/started"} Getting started guide
                   %li.divider
                   %li
-                    %a{:href => "#{site.base_url}/guide/user"} Users guide
+                    %a{:href => "#{site.base_url}/guide/user"} Users' guide
                   %li
-                    %a{:href => "#{site.base_url}/guide/devel"} Developers guide
-              %li#preview-menu.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Download
-                  %b.caret
-                %ul.dropdown-menu
+                    %a{:href => "#{site.base_url}/guide/devel"} Developers' guide
+                  %li.divider
                   %li
-                    %a{:href => "#{site.base_url}/download/distro", :target => "_blank"} Binary distribution
-                  %li
-                    %a{:href => "#{site.base_url}/download/distro+jdk", :target => "_blank"} Binary distribution including JDK
+                    %a{:href => "#{site.base_url}/javadoc"} JavaDoc
+              %li
+                %a#swatch-link{:href => "#{site.base_url}/download", :rel => "tooltip", :title => "Download binary distributions or source code" } Download
             %form.navbar-search.pull-left{:action => "http://www.google.com/search", :target => "_blank"}
               %input{:type => "hidden", :name => "sitesearch", :value => "perfcake.org"}
               %input.search-query.span2{:name => "q", :placeholder => "Search", :type => "text"}/
@@ -87,10 +83,17 @@
         %p.pull-right
           %a{:href => "#top"} Back to top
         .links
-          %a{:href => "http://perfcake.blogspot.com"} Blog
-          %a{:href => "http://perfcake.blogspot.com/feeds/posts/default"} Atom
-          %a{:href => "https://twitter.com/perfcaketool"} Twitter
-          %a{:href => "https://github.com/PerfCake"} GitHub
+          %i.icon-quote-left
+          %a{:href => "http://perfcake.blogspot.com", :target => "_blank"} Blog
+          %i.icon-rss
+          %a{:href => "http://perfcake.blogspot.com/feeds/posts/default", :target => "_blank"} Atom
+          %i.icon-twitter
+          %a{:href => "https://twitter.com/perfcaketool", :target => "_blank"} Twitter
+          %i.icon-github
+          %a{:href => "https://github.com/PerfCake", :target => "_blank"} GitHub
+          %i.icon-google-plus
+          %a{:href => "https://groups.google.com/forum/#!forum/perfcake", :target => "_blank"} Google Group
+          %i.icon-info
           %a{:href => "#{site.base_url}/javadoc"} API
         Code licensed under the
         = succeed "." do

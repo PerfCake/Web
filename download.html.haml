@@ -1,0 +1,71 @@
+---
+layout: default
+---
+.row-fluid
+  .span12
+    %h1 
+      %i.icon-download-alt
+      Download
+    %p.lead Please feel free to choose a distribution most appropriate for you.
+    .alert.alert-error
+      %i.icon-info-sign
+      %strong Please note
+      That you can also join our
+      %a{:href => "#{site.base_url}/community"} Community
+      and checkout the
+      = succeed "." do
+        %a{:href => "https://github.com/PerfCake/PerfCake"} source code repository
+.row
+  .span4
+    %h3 
+      %i.icon-gear
+      Binary Distribution
+    %p
+      This a 
+      %strong ready to run
+      distribution of PerfCake. All you need is an installation of 
+      %a{:href => "http://www.oracle.com/technetwork/java/javase/downloads/"} Java SE 7
+      or later.
+    %p 
+      This distribution format is not ready yet. Please check out later. We are sorry for the inconveniences. You could also try the source code download to the right, or the 
+      = succeed "." do
+        %a{:href => "https://github.com/PerfCake/PerfCake"} source code repository on GitHub
+    %p
+      %a.btn.btn-primary.btn-big.disabled{ :href=>'#download' } 
+        %i.icon-download
+        Download Binary Distribution &raquo; 
+  .span4
+    %h3 
+      %i.icon-cogs
+      Binary Distribution with Java SE installation
+    %p
+      This a 
+      %strong ready to run
+      distribution of PerfCake. You do not need any additional dependencies. We even included a Java SE installation for your comfort. The price for that is a slightly larger installation.
+    %p 
+      This distribution format is not ready yet. Please check out later. We are sorry for the inconveniences. You could also try the source code download to the right, or the 
+      = succeed "." do
+        %a{:href => "https://github.com/PerfCake/PerfCake"} source code repository on GitHub
+    %p
+      %a.btn.btn-primary.btn-big.disabled{ :href=>'#download' } 
+        %i.icon-download
+        Download Binary Distribution with JDK &raquo; 
+  .span4
+    %h3 
+      %i.icon-keyboard
+      Source Code Distribution
+    %p
+      This a distribution of the
+      %strong master branch
+      directly from our 
+      = succeed "." do
+        %a{:href => "https://github.com/PerfCake/PerfCake"} source code repository on GitHub
+      This is recommended for advanced users.
+    %p 
+      You might be interested in how to 
+      %a{ :href=>'#{site.base_url}/quickstart' } compile and run
+      this distribution.
+    %p
+      %a.btn.btn-primary.btn-big{ :href=>'https://github.com/PerfCake/PerfCake/archive/master.zip' } 
+        %i.icon-download
+        Download Source Code Distribution &raquo; 

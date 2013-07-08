@@ -1,0 +1,50 @@
+---
+layout: default
+---
+%header#overview.jumbotron.subhead
+  .row
+    .span6
+      %h1 
+        %i.icon-phone
+        Support
+      %p.lead How can we help you?
+    .span6
+      .well{:style => "padding: 25px 25px 15px 25px;"}
+        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} We are good at performance testing!
+        %span{:style => "display: block;"} If you still does not feel strong enough after going through the guides or you need any advise on performance testing of your application, just give us a try.
+        %div{:style => "clear:both"}
+  .row
+    .span12
+      .page-header
+        %h2 
+          %i.icon-question-sign
+          Did you already try the following resources?
+        %ul
+          %li 
+            We have various guides available
+            %ul
+              %li
+                %a{:href => "#{site.base_url}/guide/started"} Getting started guide
+              %li
+                %a{:href => "#{site.base_url}/guide/user"} Users' guide
+              %li
+                %a{:href => "#{site.base_url}/guide/devel"} Developers' guide
+              %li
+                %a{:href => "#{site.base_url}/javadoc"} JavaDoc
+          %li 
+            Try asking at
+            %a{:href => "https://groups.google.com/forum/#!forum/perfcake", :target => "_blank"} PerfCake Google Group
+          %li 
+            %i.icon-comments
+            our Community IRC channel 
+            %strong #perfcake
+            at
+            %strong irc.codehaus.org
+      .page-header
+        %h2 
+          %i.icon-ambulance
+          Still in doubt?
+        .alert.alert-error
+          %i.icon-info-sign
+          %strong Contact form
+          is coming soon!

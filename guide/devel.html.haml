@@ -1,0 +1,47 @@
+---
+layout: default
+---
+%header#overview.jumbotron.subhead
+  .row
+    .span6
+      %h1 
+        %i.icon-book
+        Developers' Guide
+      %p.lead Developers' guide is indented for those who would like to develop extensions on PerfCake be it message senders, generators, reporters, validator or anything else.
+    .span6
+      .well{:style => "padding: 25px 25px 15px 25px;"}
+        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Did you already try the other guides?
+        %span{:style => "display: block;"}
+          %ul
+            %li
+              %i.icon-time
+              %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
+              \- run your first benchmark in 5 minutes
+            %li
+              %a{:href => "#{site.base_url}/guide/started"} Getting started guide
+            %li
+              %a{:href => "#{site.base_url}/guide/user"} Users' guide
+            -# %li
+            -#   %a{:href => "#{site.base_url}/guide/devel"} Developers' guide
+            %li
+              %a{:href => "#{site.base_url}/javadoc"} JavaDoc
+        %div{:style => "clear:both"}
+  .row
+    .span12
+      .page-header
+        %h2 
+          %i.icon-download
+          Developers' guide downloads
+        %p
+          The downloads will be available soon. In the meantime, you can checkout
+          = succeed "." do
+            %a{:href => "https://github.com/PerfCake/PerfCake"} documentation source code repository on GitHub
+        %p
+          As a developer, you might be also interested in our 
+          %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/quickstart"} 
+            %i.icon-group
+            Community &raquo;
+        .alert.alert-error
+          %i.icon-info-sign
+          %strong Downloads
+          are coming soon!

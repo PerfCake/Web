@@ -14,74 +14,54 @@ layout: default
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Time is money and performance matters!
         %span{:style => "display: block;"} Do not let your customers waiting and know where the pain points of your application is. PerfCake is not only a performance testing framework. It is also a load generator and a sophisticated response validator. 
-        %a{:href => "#about"} Learn more...
+        %a.pull-right.btn.btn-primary.btn-big{:href => "#about", :target => "_blank"}
+          %i.icon-info-sign.icon-white
+            Learn More &raquo;
         %div{:style => "clear:both"}
-  .subnav
-    %ul.nav.nav-pills
-      %li
-        %a{:href => "#typography"} Typography
-      %li
-        %a{:href => "#navbar"} Navbar
-      %li
-        %a{:href => "#buttons"} Buttons
-      %li
-        %a{:href => "#forms"} Forms
-      %li
-        %a{:href => "#tables"} Tables
-      %li
-        %a{:href => "#miscellaneous"} Miscellaneous
  
-%section#typography
+%section#perfcake
   .page-header
-    %h1 You are awestruct!
-
-  %p This site is all setup to use Bootstrap 2 with Awestruct.
-  %p
-    %a.btn.btn-primary.btn-large{ :href=>'http://awestruct.org' }
-      %i.icon-info-sign.icon-white
-      Learn more &raquo;
+    %h1 This is PerfCake!
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 .row
-  .span4
-    %h2 About
-    %p Awestruct is a framework for creating static HTML sites. It's inspired by the awesome Jekyll utility in the same genre.
-    %p Additionally, Awestruct integrates technologies such as Compass, Markdown and Haml.
-    %p
-      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
-  .span4
-    %h2 Goal
-    %p The goal of Awestruct is to make it trivially easy to bake out non-trivial static websites. In addition to providing template-driven site creation (using Haml), Awestruct provides facilities for easily priming the site creation with additional non-page data.
-    %p
-      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
-  .span4
-    %h2 Concept
-    %p The core concept of Awestruct is that of structures, specifically Ruby OpenStruct structures. The struct aspect allows arbitrary, schema-less data to be associated with a specific page or the entire site.
-    %p
-      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+  .span6
+    %section#about
+      %h2 About
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      %p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .span6
+    %section#goal
+      %h2 Goal
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      %p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 .row
   .span4
-    %h2 Learn
-    %ul
-      %li 
-        %a{:href => "#{site.base_url}/quickstart"} Getting started!
-      %li
-        %a{:href => "#{site.base_url}/guide"} Guides
+    %section#learn 
+      %h2#learn Learn
+      %ul
+        %li 
+          %a{:href => "#{site.base_url}/quickstart"} Getting started!
+        %li
+          %a{:href => "#{site.base_url}/guide"} Guides
   .span4
-    %h2 Get Involved
-    %ul
-      %li 
-        %a{:href => "#{site.base_url}/community"} Community
-      %li
-        %a{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"} Contributing Guidelines
-      %li 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
-      %li 
-        %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
+    %section#involve 
+      %h2 Get Involved
+      %ul
+        %li 
+          %a{:href => "#{site.base_url}/community"} Community
+        %li
+          %a{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"} Contributing Guidelines
+        %li 
+          %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
+        %li 
+          %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
   .span4
-    %h2 Stay Informed
-    %ul
-      %li 
-        %a{:href => "https://twitter.com/#!/search/#perfcaketool", :alt => "Browse the #perfcaketool on Twitter", :target => "_blank"} Watch us on Twitter
-      %li
-        %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
+    %section#informed 
+      %h2 Stay Informed
+      %ul
+        %li 
+          %a{:href => "https://twitter.com/#!/search/#perfcaketool", :alt => "Browse the #perfcaketool on Twitter", :target => "_blank"} Watch us on Twitter
+        %li
+          %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
 
