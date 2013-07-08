@@ -35,15 +35,15 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#{site.base_url}"} PerfCake
+          %a.brand{:href => "#{site.base_url}/"} PerfCake
           #main-menu.nav-collapse.collapse
             %ul#main-menu-left.nav
               %li
                 %a{:href => "http://perfcake.blogspot.com", :onclick => "pageTracker._link(this.href); return false;", :target => "_blank", :rel => "tooltip", :title => "Read our blog"} News
               %li
-                %a#swatch-link{:href => "community", :rel => "tooltip", :title => "Learn about the community, how to contribute, etc." } Community
+                %a#swatch-link{:href => "#{site.base_url}/community", :rel => "tooltip", :title => "Learn about the community, how to contribute, etc." } Community
               %li
-                %a#swatch-link{:href => "quickstart", :rel => "tooltip", :title => "Run your first benchmark in 5 minutes" } Get started!
+                %a#swatch-link{:href => "#{site.base_url}/quickstart", :rel => "tooltip", :title => "Run your first benchmark in 5 minutes" } Get started!
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   Guides
