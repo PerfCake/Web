@@ -14,54 +14,97 @@ layout: default
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Time is money and performance matters!
         %span{:style => "display: block;"} Do not let your customers waiting and know where the pain points of your application is. PerfCake is not only a performance testing framework. It is also a load generator and a sophisticated response validator. 
-        %a.pull-right.btn.btn-primary.btn-big{:href => "#about", :target => "_blank"}
+        %a.pull-right.btn.btn-primary.btn-big{:href => "#about"}
           %i.icon-info-sign.icon-white
             Learn More &raquo;
         %div{:style => "clear:both"}
  
-%section#perfcake
-  .page-header
-    %h1 This is PerfCake!
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+.page-header
+  %h1 This is PerfCake!
+  %p 
+    PerfCake is a lightweight performance testing tool and a load generator with the aim to be minimalistic, easy to use, provide stable results, have minimum influence on the measured system, be platform independent, use component design, allow high troughput. 
+  %p
+    Just give it a try and soon you'll be 
+    %strong lovin' it!
+    %a{:name => "about"}
 .row
   .span6
-    %section#about
-      %h2 About
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      %p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    %h2 About
+    %p
+      PerfCake has a component design which means that you can build up your own tests from some basic building blocks. This allows a high flexibility in configuration and the components can be reused in different tests.
+    %p 
+      PerfCake has a pluggable architecture with many supported interfaces/protocols out of the box (HTTP, REST, JMS, JDBC, SOAP, socket, file etc.).
+      If you need support for another interface ask
+      %a{:href => "#{site.base_url}/community" } our community
+      or provide the implementation. It is really easy!
+    %p
+      Except for interfaces/protocols, PerfCake also supports various means of generating the load. It can send a preset count of messages, it can send as many messages as the target system is able to consume for a given period of time, or it can carefully aim for maximum allowable throughtput.
+    %p
+      What would be a measurement with proper reports?! PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others. There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet. In the future we plan to add more output formats as the requests arise.
+    %p
+      What if the target system crashed and just quickly returns error messages? There are validators that can validate the response to see if everything is OK. With validators you can also use PerfCake to write an end-to-end test of your system. Like in case of JDBC - when you provide a list of SQL commands and expected results.
+    %p
+      To run PerfCake, one just need to supply a so called "scenario". This is an XML file that describes the building blocks that should be used together. Then you just run the scenario using Maven or a prepared shell script if you downloaded just the binaries.
+      %em We understand the need for an IDE plugin and this is one of our short term goals.
+      You can also use PerfCake in your application using its 
+      = succeed "." do
+        %a{:href => "#{site.base_url}/javadoc"} API
+    %p
+      We hope to make your performance testing a real 
+      = succeed "." do
+        %a{:href => "http://www.youtube.com/watch?v=DXf3U2z4IJs"} piece of cake
+    %p
+      Where to go next? Continue with one of the links below
+      %i.icon-hand-down
   .span6
-    %section#goal
-      %h2 Goal
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      %p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+    %h2 Goals
+    %p 
+      Although you can use PerfCake now and be happy with it, we are aware of many areas where it can be better. So here are a few items from our priority list. If you want to work on any of theese, this would be highly appreciated. Just join 
+      = succeed "." do
+        %a{:href => "#{site.base_url}/community" } our community
+    %ul
+      %li Complete the web pages
+      %li Release 1.0
+      %li Write comprehensive User and Developers Guides
+      %li Clean up JavaDoc
+      %li Write a blog article(s) comparing PerfCake to other performance testing tools
+      %li Write a blog article on integrating PerfCake in your application
+      %li Write a blog article on running PerfCake with a 3rd party messaging
+      %li Write a success story about using PerfCake on JBoss Fuse and JBoss EDS
+      %li Provide a sample report comparing standard industry solutions for JMS or WS
+      %li Develop Eclipse IDE plugin for PerfCake
+      %li Multiple PerfCake instances in a cluster should coordinate together (now they work as a separate units)
+      %li 
+        Make sure PerfCake is the best tool on the market 
+        %i.icon-smile
+    %p
+      From a long term perspective, we would like to see PerfCake being used as a standard performance mesurement tool. We believe to achieve this through its minimalistic component design, stable results, and easy usage.
 .row
   .span4
-    %section#learn 
-      %h2#learn Learn
-      %ul
-        %li 
-          %a{:href => "#{site.base_url}/quickstart"} Getting started!
-        %li
-          %a{:href => "#{site.base_url}/guide"} Guides
+    %h2 Learn
+    %ul
+      %li 
+        %a{:href => "#{site.base_url}/quickstart"} Getting started!
+      %li
+        %a{:href => "#{site.base_url}/guide"} Guides
+      %li
+        %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read Success Stories on our Blog
   .span4
-    %section#involve 
-      %h2 Get Involved
-      %ul
-        %li 
-          %a{:href => "#{site.base_url}/community"} Community
-        %li
-          %a{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"} Contributing Guidelines
-        %li 
-          %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
-        %li 
-          %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
+    %h2 Get Involved
+    %ul
+      %li 
+        %a{:href => "#{site.base_url}/community"} Community
+      %li
+        %a{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"} Contributing Guidelines
+      %li 
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
+      %li 
+        %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
   .span4
-    %section#informed 
-      %h2 Stay Informed
-      %ul
-        %li 
-          %a{:href => "https://twitter.com/#!/search/#perfcaketool", :alt => "Browse the #perfcaketool on Twitter", :target => "_blank"} Watch us on Twitter
-        %li
-          %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
+    %h2 Stay Informed
+    %ul
+      %li 
+        %a{:href => "https://twitter.com/#!/search/#perfcaketool", :alt => "Browse the #perfcaketool on Twitter", :target => "_blank"} Watch us on Twitter
+      %li
+        %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
 

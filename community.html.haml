@@ -12,22 +12,15 @@ layout: default
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Welcome to PerfCake community!
         %span{:style => "display: block;"} Please dive in wherever takes your fancy! We would like to make your contributions a piece of cake. 
-        %a.pull-right.btn.btn-primary.btn-big{:href => "#contribution", :target => "_blank"}
+        %a.pull-right.btn.btn-primary.btn-big{:href => "#contribution"}
           %i.icon-question-sign.icon-white
             How To Contribute &raquo;
         %div{:style => "clear:both"}
-  .subnav
-    %ul.nav.nav-pills
-      %li
-        %a{:href => "#welcome"} Welcome to Community
-      %li
-        %a{:href => "#contribution"} How to contribute
 
   .row
     .span12
-      %section#welcome
-        .page-header
-          %h2 Welcome to Community
+      .page-header
+        %h2 Welcome to Community
         %h3 
           %i.icon-bug
           Issue tracker
@@ -66,20 +59,24 @@ layout: default
           on Github.
         %p
           Both git and Github are awesome for collaboration! To make improvements or bug fixes to the PerfCake project, simply fork the project, commit your changes, and send a pull request.
-      %section#contribution
-        .page-header
-          %h2 How to contribute
+          %a{:name => "contribution"} 
+
+  .row
+    .span12
+      .page-header
+        %h2
+          How to contribute
         %p 
           We love contributions! We really need your help to make 
           %a{:href => "http://www.perfcake.org"} PerfCake 
-          even more a piece of a cake, so please join our community!
+          even more a piece of cake, so please join our community!
         %p 
           Many thanks to all of our 
           = succeed "!" do
             %a{:href => "https://github.com/PerfCake/PerfCake/graphs/contributors"} existing contributors 
           But we're greedy, we want more! PerfCake is great, but it can be better! :). We have lots of extensions, generators, senders, validators, reporters... that can be improved and we want more of them!
         %p Here's some notes to help you get started:
-        
+      
         %h3 Getting Started
         %ul
           %li 
@@ -114,12 +111,12 @@ layout: default
 
         %h3 
           Fancy hacking some code?
-          .label.label-success enhancements
+          .label.label-success cake
         %ul
           %li If you fancy working on some code, check out the these lists of issues:
           %ul
             %li 
-              %a{:href => "https://github.com/PerfCake/PerfCake/issues?labels=enhancement&page=1&sort=updated&state=open"} enhancements 
+              %a{:href => "https://github.com/PerfCake/PerfCake/issues?labels=cake&page=1&sort=updated&state=open"} cakes 
               \- which are moderately easy to fix and tend to have links to which bits of the code to look at to fix at 
             %li 
               %a{:href => "https://github.com/PerfCake/PerfCake/issues?state=open"} all open issues 
