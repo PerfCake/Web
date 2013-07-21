@@ -33,12 +33,18 @@ layout: default
           %i.icon-download
           JavaDoc downloads
         %p
-          The downloads will be available soon. In the meantime, you can checkout
-          = succeed "." do
-            %a{:href => "https://github.com/PerfCake/PerfCake"} documentation source code repository on GitHub
+          Current version of JavaDoc from the master branch is 0.2-SNAPSHOT and can be downloaded
+          %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/perfcake-0.2-SNAPSHOT-javadoc.jar"} 
+            %i.icon-archive
+            JavaDoc Archive &raquo;
+        %p
+          You can also read the documentation online
+          %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/", :target => "_blank"} 
+            %i.icon-book
+            Online JavaDoc &raquo;
         %p
           As a developer, you might be also interested in our 
-          %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/quickstart"} 
+          %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
             %i.icon-group
             Community &raquo;
         %p 
@@ -47,5 +53,4 @@ layout: default
             %a{:href => "https://github.com/PerfCake/PerfCake/issues?state=open"} a fix
         .alert.alert-error
           %i.icon-info-sign
-          %strong Downloads
-          are coming soon!
+          %strong Downloads for older versions will be available too.
