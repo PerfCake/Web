@@ -22,7 +22,7 @@ layout: default
 .page-header
   %h1 This is PerfCake!
   %p 
-    PerfCake is a lightweight performance testing tool and a load generator with the aim to be minimalistic, easy to use, provide stable results, have minimum influence on the measured system, be platform independent, use component design, allow high troughput. 
+    PerfCake is a lightweight performance testing tool and a load generator with the aim to be minimalistic, easy to use, provide stable results, have minimum influence on the measured system, be platform independent, use component design, allow high throughput. 
   %p
     Just give it a try and soon you'll be 
     %strong lovin' it!
@@ -38,13 +38,13 @@ layout: default
       %a{:href => "#{site.base_url}/community" } our community
       or provide the implementation. It is really easy!
     %p
-      Except for interfaces/protocols, PerfCake also supports various means of generating the load. It can send a preset count of messages, it can send as many messages as the target system is able to consume for a given period of time, or it can carefully aim for maximum allowable throughtput.
+      Except for interfaces/protocols, PerfCake also supports various means of generating the load. It can send a preset count of messages, it can send as many messages as the target system is able to consume for a given period of time, or it can carefully aim for maximum allowable throughput.
     %p
       What would be a measurement with proper reports?! PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others. There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet. In the future we plan to add more output formats as the requests arise.
     %p
       What if the target system crashed and just quickly returns error messages? There are validators that can validate the response to see if everything is OK. With validators you can also use PerfCake to write an end-to-end test of your system. Like in case of JDBC - when you provide a list of SQL commands and expected results.
     %p
-      To run PerfCake, one just need to supply a so called "scenario". This is an XML file that describes the building blocks that should be used together. Then you just run the scenario using Maven or a prepared shell script if you downloaded just the binaries.
+      To run PerfCake, one just needs to supply a so called "scenario". This is an XML file that describes the building blocks that should be used together. Then you just run the scenario using Maven or a prepared shell script if you downloaded just the binaries.
       %em We understand the need for an IDE plugin and this is one of our short term goals.
       You can also use PerfCake in your application using its 
       = succeed "." do
@@ -78,7 +78,7 @@ layout: default
         Make sure PerfCake is the best tool on the market 
         %i.icon-smile
     %p
-      From a long term perspective, we would like to see PerfCake being used as a standard performance mesurement tool. We believe to achieve this through its minimalistic component design, stable results, and easy usage.
+      From a long term perspective, we would like to see PerfCake being used as a standard performance measurement tool. We believe to achieve this through its minimalistic component design, stable results, and easy usage.
 .row
   .span4
     %h2 Learn
