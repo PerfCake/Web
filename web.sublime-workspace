@@ -12,34 +12,10 @@
 	"buffers":
 	[
 		{
-			"file": "_layouts/default.html.haml",
-			"settings":
-			{
-				"buffer_size": 6733,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "index.html.haml",
 			"settings":
 			{
-				"buffer_size": 3426,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "community.html.haml",
-			"settings":
-			{
-				"buffer_size": 7599,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "quickstart.html.haml",
-			"settings":
-			{
-				"buffer_size": 2923,
+				"buffer_size": 6423,
 				"line_ending": "Unix"
 			}
 		}
@@ -59,7 +35,10 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 0.0,
+		"history":
+		[
+		]
 	},
 	"distraction_free":
 	{
@@ -72,18 +51,20 @@
 	},
 	"file_history":
 	[
+		"/home/mvecera/work/PerfCake/Web/_layouts/default.html.haml",
 		"/home/mvecera/work/PerfCake/Web/support.html.haml",
 		"/home/mvecera/work/PerfCake/Web/download.html.haml",
 		"/home/mvecera/work/PerfCake/Web/community.html.haml",
-		"/home/mvecera/work/PerfCake/Web/javadoc.html.haml",
-		"/home/mvecera/work/PerfCake/Web/guide/user.html.haml",
-		"/home/mvecera/work/PerfCake/Web/guide/started.html.haml",
-		"/home/mvecera/work/PerfCake/Web/index.html",
 		"/home/mvecera/work/PerfCake/Web/quickstart.html.haml",
+		"/home/mvecera/work/PerfCake/Web/stylesheets/bootswatch.css",
+		"/home/mvecera/work/PerfCake/Web/guide/user.html.haml",
+		"/home/mvecera/work/PerfCake/Web/javadoc.html.haml",
+		"/home/mvecera/work/PerfCake/Web/guide/devel.html.haml",
+		"/home/mvecera/work/PerfCake/Web/guide/started.html.haml",
+		"/home/mvecera/work/PerfCake/Web/stylesheets/bootstrap.css",
+		"/home/mvecera/work/PerfCake/Web/index.html",
 		"/home/mvecera/work/PerfCake/Web/web.sublime-workspace",
 		"/home/mvecera/work/PerfCake/Web/stylesheets/bootstrap.min.css",
-		"/home/mvecera/work/PerfCake/Web/stylesheets/bootstrap.css",
-		"/home/mvecera/work/PerfCake/Web/stylesheets/bootswatch.css",
 		"/home/mvecera/work/PerfCake/Web/stylesheets/bootswatch.less",
 		"/home/mvecera/work/PerfCake/Web/stylesheets/bootstrap-responsive.css",
 		"/home/mvecera/work/PerfCake/Web/.awestruct_ignore",
@@ -106,6 +87,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a cak",
+			"enhancement",
+			"\n      ",
 			"fancy",
 			"Fancy",
 			".row",
@@ -121,6 +105,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"cake"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -136,74 +121,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "_layouts/default.html.haml",
-					"settings":
-					{
-						"buffer_size": 6733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5008,
-								5029
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1005.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "index.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3426,
+						"buffer_size": 6423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1010,
-								1010
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 810.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "community.html.haml",
-					"settings":
-					{
-						"buffer_size": 7599,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								858,
-								858
+								384,
+								384
 							]
 						],
 						"settings":
@@ -214,34 +144,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "quickstart.html.haml",
-					"settings":
-					{
-						"buffer_size": 2923,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1819,
-								1819
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -280,9 +182,10 @@
 		]
 	},
 	"menu_visible": true,
+	"project": "web.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -305,10 +208,24 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 216.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
