@@ -6,4 +6,4 @@ profiles:
   development:
     base_url: '/'
   production:
-    base_url: 'http://www.perfcake.org'
+    base_url: 'https://www.perfcake.org'
