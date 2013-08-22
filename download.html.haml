@@ -27,13 +27,21 @@ layout: default
       %a{:href => "http://www.oracle.com/technetwork/java/javase/downloads/"} Java SE 7
       or later.
     %p 
-      This distribution format is not ready yet. Please check out later. We are sorry for the inconveniences. You could also try the source code download to the right, or the 
+      This distribution format is the latest released version. It is based on the master branch in the 
       = succeed "." do
         %a{:href => "https://github.com/PerfCake/PerfCake"} source code repository on GitHub
     %p
-      %a.btn.btn-primary.btn-big.disabled{ :href=>'#download' } 
+      The binaries can be run on Linux and Windows platforms with 
+      %a{ :href => "http://java.com/en/download/index.jsp" } Java SE 7
+      installed (we test only with Oracle JDK), both x86 and x86_64 architectures. MacOS users must compile from sources for now.
+    %p
+      %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.tar.bz2" } 
         %i.icon-download
-        Download Binary Distribution &raquo; 
+        Download #{site.version} Binary Distribution (tar.bz2) &raquo; 
+    %p
+      %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.tar.gz" } 
+        %i.icon-download
+        Download #{site.version} Binary Distribution (tar.gz) &raquo; 
   .span4
     %h3 
       %i.icon-cogs
@@ -63,9 +71,17 @@ layout: default
       This is recommended for advanced users.
     %p 
       You might be interested in how to 
-      %a{ :href=>'#{site.base_url}/quickstart' } compile and run
+      %a{ :href => "#{site.base_url}/quickstart" } compile and run
       this distribution.
+    %p
+      %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-src.tar.bz2" } 
+        %i.icon-download
+        Download #{site.version} Source Distribution (tar.bz2) &raquo; 
+    %p
+      %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-src.tar.gz" } 
+        %i.icon-download
+        Download #{site.version} Source Distribution (tar.gz) &raquo; 
     %p
       %a.btn.btn-primary.btn-big{ :href=>'https://github.com/PerfCake/PerfCake/archive/master.zip' } 
         %i.icon-download
-        Download Source Code Distribution &raquo; 
+        Download Source Code Directly From GitHub (zip) &raquo; 
