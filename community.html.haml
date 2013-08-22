@@ -59,7 +59,16 @@ layout: default
           on Github.
         %p
           Both git and Github are awesome for collaboration! To make improvements or bug fixes to the PerfCake project, simply fork the project, commit your changes, and send a pull request.
-          %a{:name => "contribution"} 
+          %a{:name => "contribution"}
+        %h3
+          %i.icon-sitemap
+          Maven Site
+        %p
+          All important information about the source code can be found at the 
+          = succeed "." do
+            %a{:href => "http://site.perfcake.org/", :target => "_blank"}
+              PerfCake Maven Site
+          The site is automatically updated from the developers' branch nightly.
 
   .row
     .span12

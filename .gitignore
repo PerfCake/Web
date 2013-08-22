@@ -2,3 +2,4 @@ _site
 _tmp
 .awestruct
 web.sublime*
+awestruct.sh

@@ -1,6 +1,7 @@
 name: PerfCake
 title: PerfCake -- A Lightweight Performance Testing Framework
 org: PerfCake.org
+version:
 base_url: '.'
 profiles:
   development:
