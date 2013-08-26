@@ -10,7 +10,7 @@ layout: default
       %p.lead We love contributors!
     .span6
       .well{:style => "padding: 25px 25px 15px 25px;"}
-        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Welcome to PerfCake community!
+        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Welcome to the PerfCake community!
         %span{:style => "display: block;"} Please dive in wherever takes your fancy! We would like to make your contributions a piece of cake. 
         %a.pull-right.btn.btn-primary.btn-big{:href => "#contribution"}
           %i.icon-question-sign.icon-white
@@ -27,7 +27,7 @@ layout: default
         %p
           The project tracks bugs, feature requests, and other issues through the Github issue tracking system.
         %p
-          %a.btn.btn-primary.btn-big{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"}
+          %a.btn.btn-primary.btn-big{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"}
             %i.icon-info-sign.icon-white
               PerfCake Issue Tracker &raquo;
         %h3
@@ -89,7 +89,7 @@ layout: default
           How to contribute
         %p 
           We love contributions! We really need your help to make 
-          %a{:href => "http://www.perfcake.org"} PerfCake 
+          %a{:href => "https://www.perfcake.org"} PerfCake 
           even more a piece of cake, so please join our community!
         %p 
           Many thanks to all of our 
@@ -164,13 +164,24 @@ layout: default
           %li Submit a pull request to the repository in the PerfCake organization.
           %li If your change references an existing issue then use “fixes #123” in the commit message (using the correct issue number).
           %li 
-            See 
-            %a.btn.btn-primary.btn-small{:href => "https://github.com/PerfCake/PerfCake/wiki/Development-on-PerfCake", :target => "_blank"}
-              %i.icon-info-sign.icon-white
-                Detailed information &raquo;
-            on submiting changes to 
-            = succeed "." do
-              %a{:href => "http://www.perfcake.org"} PerfCake
+            Your work will be reviewed by one of the developers who do not have any mercy. So for your pull request to be accepted make sure to
+            %ul
+              %li Develop tests for your features/fixes (keep the high level of test coverage),
+              %li 
+                Use the appropriate code style and formatting (
+                %a{ :href => 'https://github.com/PerfCake/PerfCake/blob/master/code-formating/perfcake-java-profile.xml', :target => '_blank' } Eclipse configuration file
+                is present in the repo),
+              %li 
+                Avoid introducing new 
+                %a{ :href => 'http://site.perfcake.org/findbugs.html', :target => '_blank' } FindBugs warnings
+                (see 
+                %a{ :href => "#{site.base_url}/guide/devel" } Developers' Guide
+                to find out how to generate the site report),
+              %li Keep backward compatibility unless previously discussed with the developers,
+              %li Write/update the JavaDoc comments,
+              %li You do not keep unused imports, FIXME comments, unused variables, cryptic code or anything ugly,
+              %li Submit only a masterpiece code that you could be proud of.
+
         %h3 Additional Resources
         %ul
           %li
