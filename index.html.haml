@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+%script{:type => "text/javascript", :src => "#{site.base_url}/javascripts/countdown.js"}
 %header#overview.jumbotron.subhead
   .row
     .span7
@@ -12,11 +13,13 @@ layout: default
       %p.lead A Lightweight Performance Testing Framework
     .span5
       .well{:style => "padding: 25px 25px 15px 25px;"}
-        %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Time is money and performance matters!
-        %span{:style => "display: block;"} Do not let your customers wait and know where the pain points of your application are. PerfCake is not only a performance testing framework. It is also a load generator and a sophisticated response validator. 
-        %a.pull-right.btn.btn-primary.btn-big{:href => "#about"}
-          %i.icon-info-sign.icon-white
-            Learn More &raquo;
+        %div{:style => "line-height: 2em; font-weight: bold; font-size: 1.3em;", :id => "countdown"}
+          %script{:type => "text/javascript"}
+            showRemaining();
+        / 
+          %a.pull-right.btn.btn-primary.btn-big{:href => "#about"}
+            %i.icon-info-sign.icon-white
+              Learn More &raquo;
         %div{:style => "clear:both"}
  
 .page-header
