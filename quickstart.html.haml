@@ -12,7 +12,7 @@ layout: default
     %h3 
       %i.icon-download-alt
       Download & Compile
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    %p This is your first PerfCake example. You will learn to 1) get PerfCake and install it, 2) prepare your first simple scenario and run it, 3) evaluate results of your test. Let's start with the first step.
     %p
       %a.btn{ :href=>'#download' } View details &raquo; 
   .span4
@@ -33,10 +33,40 @@ layout: default
 %section#download
   .page-header
     %h2 
-      %i.icon-time
+      %i.icon-download-alt
       Download and Compile
     %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      The simplest way how to start with PerfCake is to 
+      = succeed "." do
+        %a{:href => "#{site.base_url}/download"}download the binary distribution
+      You can unpack it wherever you want, just remember the directory (let’s call it 
+      = succeed ")." do
+        %tt $PERFCAKE_HOME
+      After unpacking you will have your directory with the following structure:
+    %pre
+      $PERFCAKE_HOME
+      |-bin----|-perfcake.bat
+      |        |-perfcake.sh
+      |
+      |-lib----|-*.jar
+      |        |-*.jar
+      |        |-*.jar
+      |
+      |-README.md
+      |-LICENCE.txt
+    %p You may try to run PerfCake, you should receive output like this:
+    %pre
+      = preserve "perfcake@perfcake:$PERFCAKE_HOME/bin/perfcake.sh\n "
+      = preserve "usage: ScenarioExecution -s &lt;SCENARIO&gt; [-sd &lt;SCENARIOS_DIR&gt;] [-md &lt;MESSAGES_DIR&gt;] [-D&lt;property=value&gt;]*\n "
+      = preserve " -D &lt;property=value&gt;                   system properties\n "
+      = preserve " -md,--messages-dir &lt;MESSAGES_DIR&gt;     directory for messages\n "
+      = preserve " -s,--scenario &lt;SCENARIO&gt;              scenario to be executed\n "
+      = preserve " -sd,--scenarios-dir &lt;SCENARIOS_DIR&gt;   directory for scenarios"
+    %p The script assumes you have JDK installed and available on the classpath, minimal version 1.7 is required. Please note that the system being tested is not required to run on Java 7. It might not run on Java at all!
+    %p 
+      For simpler referencing, please create a directory 
+      %tt scenarios
+      in the directory where you’ve unpacked the distribution ($PERFCAKE_HOME/scenarios).
 
 %section#configure
   .page-header
