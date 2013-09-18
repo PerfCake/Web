@@ -19,14 +19,14 @@ layout: default
     %h3 
       %i.icon-cogs
       Configure & Run
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    %p Next, you can create your first scenario and run a performance test. Should you need an application to stress, you could temporarily use a free echo service. Without any deep knowledge of PerfCake, you will have a running example instantly.
     %p
       %a.btn{ :href=>'#configure' } View details &raquo; 
   .span4
     %h3
       %i.icon-ok 
       Validate & Evaluate Results
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    %p The stress test is not much useful if you cannot see some numbers. So you will introduce a Reporter that reports to the Console Destination. At this moment, we do not provide any example of validating the responses as the validation is a technical preview in the first release.
     %p
       %a.btn{ :href=>'#evaluate' } View details &raquo; 
 
@@ -45,41 +45,174 @@ layout: default
       After unpacking you will have your directory with the following structure:
     %pre
       $PERFCAKE_HOME
-      |-bin----|-perfcake.bat
-      |        |-perfcake.sh
+      |-bin-------|-perfcake.bat
+      |           |-perfcake.sh
       |
-      |-lib----|-*.jar
-      |        |-*.jar
-      |        |-*.jar
+      |-lib-------|-*.jar
       |
-      |-README.md
+      |-resources-|-keystores
+      |           |-messages
+      |           |-scenarios
+      |           |-schemas
+      |
       |-LICENCE.txt
+      |-README.md
+      |-log4j.xml
     %p You may try to run PerfCake, you should receive output like this:
     %pre
       = preserve "perfcake@perfcake:$PERFCAKE_HOME/bin/perfcake.sh\n "
       = preserve "usage: ScenarioExecution -s &lt;SCENARIO&gt; [-sd &lt;SCENARIOS_DIR&gt;] [-md &lt;MESSAGES_DIR&gt;] [-D&lt;property=value&gt;]*\n "
-      = preserve " -D &lt;property=value&gt;                   system properties\n "
-      = preserve " -md,--messages-dir &lt;MESSAGES_DIR&gt;     directory for messages\n "
-      = preserve " -s,--scenario &lt;SCENARIO&gt;              scenario to be executed\n "
-      = preserve " -sd,--scenarios-dir &lt;SCENARIOS_DIR&gt;   directory for scenarios"
-    %p The script assumes you have JDK installed and available on the classpath, minimal version 1.7 is required. Please note that the system being tested is not required to run on Java 7. It might not run on Java at all!
+      = preserve "&nbsp;-D &lt;property=value&gt;                   system properties\n "
+      = preserve "&nbsp;-md,--messages-dir &lt;MESSAGES_DIR&gt;     directory for messages\n "
+      = preserve "&nbsp;-s,--scenario &lt;SCENARIO&gt;              scenario to be executed\n "
+      = preserve "&nbsp;-sd,--scenarios-dir &lt;SCENARIOS_DIR&gt;   directory for scenarios"
+    %p The script assumes you have JDK installed and available on the system path, minimal version 1.7 is required. Please note that the system being tested is not required to run on Java 7. It might not run on Java at all!
     %p 
-      For simpler referencing, please create a directory 
-      %tt scenarios
-      in the directory where you’ve unpacked the distribution ($PERFCAKE_HOME/scenarios).
-
+      In the 
+      %tt bin
+      directory you can find executable scripts for running PerfCake on Linux, Windows and Mac.
+    %p
+      The 
+      %tt lib
+      directory contains application libraries. You do not have to take any care of these.
+    %p
+      What is more interesting is the 
+      %tt resources
+      directory. In its subdirectories you can find sample
+      %em scenarios, messages
+      and all versions of XSD schemas for scenario files.
+      The 
+      %tt keystores
+      directory is used for specific message sender, but we will not deal with it in this quickstart.
+    %p
+      If you feel like going wild, you can
+      %a{:href => "#{site.base_url}/download"}download the source distribution
+      and compile it by
+    %pre
+      mvn clean package assembly:assembly
+    %p
+      Then you can find the binary distributions in the 
+      %tt target
+      directory and continue with this quickstart guide. You will also see the output of tests so you can be sure the project works fine on your system.
 %section#configure
   .page-header
     %h2 
       %i.icon-cogs
       Configure and Run
     %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+      In these days, your only possibility to prepare your first scenario is an XML file. You can use your favourite editor to create this file. The structure is defined by an XSD schema that can be found in 
+      %tt resources/schemas
+      directory. Some of the editors are able to use the schema file to suggest you valid tags. Our future plans include providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit scenarios, stay tuned! If you wanted to contribute, we are happy to
+      = succeed "." do
+        %a{ :href => "#{site.base_url}/community" } welcome you in our commmunity
+    %p
+      At minimum, simple scenario has to contain definitions for:
+    %ul
+      %li Generator - how the load will be generated
+      %li Sender - where the load will be sent - interface or protocol with address, you can choose from many already implemeted
+    %p
+      Let’s assume you need to stress your web application that has some function exposed on the following URL: http://your-app.com/cool-app, and you need to test how fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds) with 10 simultaneous clients (working threads).
+    %p 
+      If you do not have any such application at hand, you can consider using 
+      %a{ :href => "http://httpbin.org/get", :target => '_blank' } httpbin.org
+      but be polite and do not overload their server. It is provided for free.
+    %p
+      Now the important part comes. Create a file called 
+      %tt http-echo.xml
+      in the
+      %tt $PERFCAKE_HOME/resources/scenarios
+      directory.
+      Now insert the following XML snippet in it:
+    %pre
+      = preserve "&lt;?xml version='1.0' encoding='utf-8'?&gt;\n "
+      = preserve "&lt;scenario xmlns='urn:perfcake:scenario:1.0'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;generator class='DefaultMessageGenerator' threads='${thread.count:10}'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;run type='time' value='10000'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='threadQueueSize' value='5000'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;/generator&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;sender class='HTTPSender'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='target' value='http://your-app.com/cool-app'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;/sender&gt;\n "
+      = preserve "&lt;/scenario&gt;\n "
+    %p
+      This is just a simple example, you may use different sender or generator, or specify different properties. Everything is described in the 
+      = succeed "." do
+        %a{ :href => "#{site.base_url}/guide/user" } User Guide
+    %p
+      You can see 
+      %tt 
+        = preserve "${thread.count:10}"
+      in the generator’s definition. That is a system property you may set and the actual value of the property will be used. If the property is not set, the default value (10) will be used.
+    %p
+      Now, all you need to do is to execute your new test scenario by running the following command:
+    %pre
+      $PERFCAKE_HOME/bin/perfcake.sh -s http-echo -sd $PERFCAKE_HOME/resources/scenarios
+    %p
+      Please note you do not need to specify the XML extension. We are working on a fix for you not to have to specify the default scenario location as well.
+    %p
+      Now you are running your fisrt stress test. Even if you cannot see what is going on, PerfCake sends requests to your application in many threads. The test should run aproximately for 10 seconds. If you want to see some numbers (e.g. how fast your system is), you have to add one more element to your scenario to evaluate the results - the reporting.
 %section#evaluate2
   .page-header
     %h2 
       %i.icon-ok
       Validate and Evaluate Results
     %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      For reporting some results of your measurement, you have to configure a Reporter - an object that is capable of computing results in some way and outputing them wherever you can imagine.
+    %p
+      Copy your http-echo.xml file to http-reporting.xml and have it look like the listing below:
+    %pre
+      = preserve "&lt;?xml version='1.0' encoding='utf-8'?&gt;\n "
+      = preserve "&lt;scenario xmlns='urn:perfcake:scenario:1.0'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;generator class='DefaultMessageGenerator' threads='${thread.count:10}'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;run type='time' value='10000'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='threadQueueSize' value='5000'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;/generator&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;sender class='HTTPSender'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='target' value='http://your-app.com/cool-app'/&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;/sender&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;reporting&gt; \n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reporter class='ResponseTimeReporter'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination class='ConsoleDestination'&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;period type='time' value='2000' /&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/destination&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reporter&gt;\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&lt;/reporting&gt;\n "
+      = preserve "&lt;/scenario&gt;\n "
+    %p
+      Adding the
+      %tt reporting 
+      section you let your scenario to log results to some destination - in our case to the PerfCake’s console. Output will be provided every 2 seconds (2000 miliseconds).
+    %p
+      Try to run the scenario again by the following command:
+    %pre
+      $PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/resources/scenarios
+    %p
+      You should see results very similar to the listing below, numbers will be different depending on the performance of your application:
+    %pre
+      = preserve "2013-09-14 10:31:49,685 INFO  [DefaultMessageGenerator] Starting to generate...\n "
+      = preserve "[0:00:02][313 iterations][20%] [62.901408450704224] [warmUp =&gt; false]\n "
+      = preserve "[0:00:04][671 iterations][40%] [71.16112084063047] [warmUp =&gt; false]\n "
+      = preserve "[0:00:06][1057 iterations][60%] [70.58725182863114] [warmUp =&gt; false]\n "
+      = preserve "[0:00:08][1437 iterations][80%] [98.85340314136126] [warmUp =&gt; false]\n "
+    %p
+      The 
+      %tt warmUp 
+      attribute you can see in the results determines the mode of the test. In our example we do not wait for the server to warm up so the attribute is set to false all the time.
+    %h3 
+      Bonus task
+    %p
+      There is a very simple way how to measure performance of your application under different conditions with the scenario you have just created. You can test the scalability of your application using the 
+      %tt thread.count
+      attribute.
+    %p
+      Just run your scenario with this property set to different values:
+    %pre
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=1\n "
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=10\n "
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=100\n "
+    %p
+      After a half minute you should see different numbers for each run (if your application scales). Naturally, results of your meassurement won't be precise because of different conditions for each of your runs, for exact results, you will have to ensure same initial conditions for each run (i.e. restart the server, ensure some warm up period). For these advanced practices please refer to the
+      = succeed "." do
+        %a{ :href=>"#{site.base_url}/guide/user" } User Guide
+
+
