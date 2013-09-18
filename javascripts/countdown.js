@@ -72,9 +72,10 @@ function showRemaining() {
    var seconds = Math.floor((distance % _minute) / _second);
 
    var cdElement = document.getElementById('countdown');
-   var cdElementHTML = '<span style="display: block; font-weight: bold; margin-bottom: 1em;">Version ' + currentRelease + ' is out!</span>';
-   cdElementHTML += '<span style="display: block;">The next release ' + nextRelease + ' will be unleashed in:</span>';
-   cdElementHTML += '<span style="display: block; white-space:nowrap;">';
+   var cdElementHTML = '<span style="display: block; font-weight: bold; margin-bottom: 1em;">Welcome to PerfCake!</span>';
+   cdElementHTML += '<a class="btn btn-primary btn-big" href="download"><i class="icon-info-sign icon-white">&nbsp;Version ' + currentRelease + ' is out &raquo;</i></a>';
+   cdElementHTML += '<div style="clear: both;" /><br/>';
+   cdElementHTML += '<span style="display: block; white-space: nowrap;">Release ' + nextRelease + ' comming in:&nbsp;';
    cdElementHTML += '<strong>' + (days < 100 ? (days < 10 ? '00' : '0') : '') + days + '</strong>d&nbsp;';
    cdElementHTML += '<strong>' + (hours < 10 ? '0' : '') + hours + '</strong>h&nbsp;';
    cdElementHTML += '<strong>' + (minutes < 10 ? '0' : '') + minutes + '</strong>m&nbsp;';
