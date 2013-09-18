@@ -12,14 +12,9 @@ layout: default
         %a.header{:href => "#{site.base_url}"} PerfCake
       %p.lead A Lightweight Performance Testing Framework
     .span5
-      .well{:style => "padding: 25px 25px 15px 25px;"}
-        %div{:style => "line-height: 2em; font-weight: bold; font-size: 1.3em;", :id => "countdown"}
-          %script{:type => "text/javascript"}
-            showRemaining();
-        / 
-          %a.pull-right.btn.btn-primary.btn-big{:href => "#about"}
-            %i.icon-info-sign.icon-white
-              Learn More &raquo;
+      .well{:style => "padding: 25px 25px 15px 25px;", :id => "countdown"}
+        %script{:type => "text/javascript"}
+          showRemaining();
         %div{:style => "clear:both"}
  
 .page-header

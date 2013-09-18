@@ -72,11 +72,14 @@ function showRemaining() {
    var seconds = Math.floor((distance % _minute) / _second);
 
    var cdElement = document.getElementById('countdown');
-   cdElement.innerHTML = '<h2>Version ' + currentRelease + ' is out!</h2>';
-   cdElement.innerHTML += 'The next release ' + nextRelease + ' will be unleashed in:<br/>';
-   cdElement.innerHTML += '<span style="font-size: 2em;">' + (days < 100 ? (days < 10 ? '00' : '0') : '') + days + '&nbsp;</span>DAYS&nbsp;&nbsp;';
-   cdElement.innerHTML += '<span style="font-size: 2em;">' + (hours < 10 ? '0' : '') + hours + '</span>&nbsp;HRS&nbsp;&nbsp;';
-   cdElement.innerHTML += '<span style="font-size: 2em;">' + (minutes < 10 ? '0' : '') + minutes + '</span>&nbsp;MINS&nbsp;&nbsp;';
-   cdElement.innerHTML += '<span style="font-size: 2em;">' + (seconds < 10 ? '0' : '') + seconds + '</span>&nbsp;SECS';
+   var cdElementHTML = '<span style="display: block; font-weight: bold; margin-bottom: 1em;">Version ' + currentRelease + ' is out!</span>';
+   cdElementHTML += '<span style="display: block;">The next release ' + nextRelease + ' will be unleashed in:</span>';
+   cdElementHTML += '<span style="display: block; white-space:nowrap;">';
+   cdElementHTML += '<strong>' + (days < 100 ? (days < 10 ? '00' : '0') : '') + days + '</strong>d&nbsp;';
+   cdElementHTML += '<strong>' + (hours < 10 ? '0' : '') + hours + '</strong>h&nbsp;';
+   cdElementHTML += '<strong>' + (minutes < 10 ? '0' : '') + minutes + '</strong>m&nbsp;';
+   cdElementHTML += '<strong>' + (seconds < 10 ? '0' : '') + seconds + '</strong>s&nbsp;</span>';
+
+   cdElement.innerHTML = cdElementHTML;
 }
 timer = setInterval(showRemaining, 1000);
