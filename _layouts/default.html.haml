@@ -7,7 +7,7 @@
     %meta{:content => "A Lightweight Performance Testing Framework PerfCake", :name => "description"}/
     %meta{:content => "Apache License 2.0 - Copyright since 2010 by the original author or authors", :name => "copyright"}/
     /[if lt IE 9]
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      %script{:src => 'https://html5shim.googlecode.com/svn/trunk/html5.js'}
     %link{:href => "#{site.base_url}/stylesheets/bootstrap.min.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/stylesheets/bootstrap-responsive.min.css", :rel => "stylesheet", :type=>'text/css'}/
     %link{:href => "#{site.base_url}/stylesheets/font-awesome.min.css", :rel => "stylesheet", :type=>'text/css'}/
@@ -98,7 +98,7 @@
           %i.icon-bar-chart
             %a{:href => "http://www.seethestats.com/site/perfcake.org", :target => "_blank"} See The Stats
         %p.pull-right
-          %img{:src => "http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png", :alt => "Built on CloudBees"}
+          %img{:src => "https://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png", :alt => "Built on CloudBees"}
         Code licensed under the
         = succeed "." do
           %a{:href => "http://www.apache.org/licenses/LICENSE-2.0"} Apache License v2.0
