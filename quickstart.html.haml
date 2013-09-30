@@ -124,16 +124,16 @@ layout: default
       directory.
       Now insert the following XML snippet in it:
     %pre
-      = preserve "&lt;?xml version='1.0' encoding='utf-8'?&gt;\n "
-      = preserve "&lt;scenario xmlns='urn:perfcake:scenario:1.0'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;generator class='DefaultMessageGenerator' threads='${thread.count:10}'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;run type='time' value='10000'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='threadQueueSize' value='5000'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;/generator&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;sender class='HTTPSender'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='target' value='http://your-app.com/cool-app'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;/sender&gt;\n "
-      = preserve "&lt;/scenario&gt;\n "
+      = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:1.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"threadQueueSize\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"5000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/generator&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HTTPSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"target\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"http://your-app.com/cool-app\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/sender&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;/scenario&gt;\n "
     %p
       This is just a simple example, you may use different sender or generator, or specify different properties. Everything is described in the 
       = succeed "." do
@@ -161,23 +161,23 @@ layout: default
     %p
       Copy your http-echo.xml file to http-reporting.xml and have it look like the listing below:
     %pre
-      = preserve "&lt;?xml version='1.0' encoding='utf-8'?&gt;\n "
-      = preserve "&lt;scenario xmlns='urn:perfcake:scenario:1.0'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;generator class='DefaultMessageGenerator' threads='${thread.count:10}'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;run type='time' value='10000'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='threadQueueSize' value='5000'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;/generator&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;sender class='HTTPSender'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name='target' value='http://your-app.com/cool-app'/&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;/sender&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;reporting&gt; \n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reporter class='ResponseTimeReporter'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination class='ConsoleDestination'&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;period type='time' value='2000' /&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/destination&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reporter&gt;\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&lt;/reporting&gt;\n "
-      = preserve "&lt;/scenario&gt;\n "
+      = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:1.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"threadQueueSize\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"5000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/generator</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HTTPSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"target\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"http://your-app.com/cool-app\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/sender&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;reporting&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;reporter</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"ResponseTimeReporter\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;destination</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"ConsoleDestination\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;period</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"2000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/destination&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/reporter&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/reporting&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;/scenario&gt;</span>\n "
     %p
       Adding the
       %tt reporting 
