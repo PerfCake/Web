@@ -45,27 +45,31 @@ layout: default
       After unpacking you will have your directory with the following structure:
     %pre
       $PERFCAKE_HOME
-      |-bin-------|-perfcake.bat
-      |           |-perfcake.sh
-      |
-      |-lib-------|-*.jar
-      |
-      |-resources-|-keystores
-      |           |-messages
-      |           |-scenarios
-      |           |-schemas
-      |
-      |-LICENCE.txt
-      |-README.md
-      |-log4j.xml
+      ├── bin/
+      │   ├── perfcake.bat
+      │   └── perfcake.sh
+      ├── lib/
+      │   ├──ext/
+      │   ├──plugins/
+      │   └── *.jar
+      ├── resources/
+      │   ├── keystores/
+      │   ├── messages/
+      │   ├── scenarios/
+      │   └── schemas/
+      ├── LICENSE.txt
+      ├── log4j.xml
+      └── README.md
     %p You may try to run PerfCake, you should receive output like this:
     %pre
-      = preserve "perfcake@perfcake:$PERFCAKE_HOME/bin/perfcake.sh\n "
-      = preserve "usage: ScenarioExecution -s &lt;SCENARIO&gt; [-sd &lt;SCENARIOS_DIR&gt;] [-md &lt;MESSAGES_DIR&gt;] [-D&lt;property=value&gt;]*\n "
-      = preserve "&nbsp;-D &lt;property=value&gt;                   system properties\n "
-      = preserve "&nbsp;-md,--messages-dir &lt;MESSAGES_DIR&gt;     directory for messages\n "
-      = preserve "&nbsp;-s,--scenario &lt;SCENARIO&gt;              scenario to be executed\n "
-      = preserve "&nbsp;-sd,--scenarios-dir &lt;SCENARIOS_DIR&gt;   directory for scenarios"
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh\n "
+      = preserve "usage: ScenarioExecution -s &lt;SCENARIO&gt; [-sd &lt;SCENARIOS_DIR&gt;] [-md &lt;MESSAGES_DIR&gt;] [-pd &lt;PLUGINS_DIR&gt;] [-pf &lt;PROPERTIES_FILE&gt;] [-D&lt;property=value&gt;]*\n "
+      = preserve "&nbsp;-D &lt;property=value&gt;                     system properties\n "
+      = preserve "&nbsp;-md,--messages-dir &lt;MESSAGES_DIR&gt;       directory for messages\n "
+      = preserve "&nbsp;-pd,--plugins-dir &lt;PLUGINS_DIR&gt;         directory for plugins\n "
+      = preserve "&nbsp;-pf,--properties-file &lt;PROPERTIES_FILE&gt; custom system properties file\n "
+      = preserve "&nbsp;-s,--scenario &lt;SCENARIO&gt;                scenario to be executed\n "
+      = preserve "&nbsp;-sd,--scenarios-dir &lt;SCENARIOS_DIR&gt;     directory for scenarios"
     %p The script assumes you have JDK installed and available on the system path, minimal version 1.7 is required. Please note that the system being tested is not required to run on Java 7. It might not run on Java at all!
     %p 
       In the 
@@ -100,7 +104,7 @@ layout: default
       %i.icon-cogs
       Configure and Run
     %p
-      In these days, your only possibility to prepare your first scenario is an XML file. You can use your favourite editor to create this file. The structure is defined by an XSD schema that can be found in 
+      In these days, your only possibility to prepare your first scenario is an XML file. You can use your favourite editor to create this file. The structure is defined by an XSD schema that can be found under
       %tt resources/schemas
       directory. Some of the editors are able to use the schema file to suggest you valid tags. Our future plans include providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit scenarios, stay tuned! If you wanted to contribute, we are happy to
       = succeed "." do
@@ -111,7 +115,9 @@ layout: default
       %li Generator - how the load will be generated
       %li Sender - where the load will be sent - interface or protocol with address, you can choose from many already implemeted
     %p
-      Let’s assume you need to stress your web application that has some function exposed on the following URL: http://your-app.com/cool-app, and you need to test how fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds) with 10 simultaneous clients (working threads).
+      Let’s assume you need to stress your web application that has some function exposed on the following URL:
+      %tt http://your-app.com/cool-app
+      , and you need to test how fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds) with 10 simultaneous clients (working threads).
     %p 
       If you do not have any such application at hand, you can consider using 
       %a{ :href => "http://httpbin.org/get", :target => '_blank' } httpbin.org
@@ -125,7 +131,7 @@ layout: default
       Now insert the following XML snippet in it:
     %pre
       = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
-      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:1.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:2.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"threadQueueSize\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"5000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
@@ -146,7 +152,7 @@ layout: default
     %p
       Now, all you need to do is to execute your new test scenario by running the following command:
     %pre
-      $PERFCAKE_HOME/bin/perfcake.sh -s http-echo -sd $PERFCAKE_HOME/resources/scenarios
+      $PERFCAKE_HOME/bin/perfcake.sh -s http-echo
     %p
       Please note you do not need to specify the XML extension. We are working on a fix for you not to have to specify the default scenario location as well.
     %p
@@ -159,10 +165,14 @@ layout: default
     %p
       For reporting some results of your measurement, you have to configure a Reporter - an object that is capable of computing results in some way and outputing them wherever you can imagine.
     %p
-      Copy your http-echo.xml file to http-reporting.xml and have it look like the listing below:
+      Copy your
+      %tt http-echo.xml
+      file to 
+      %tt http-reporting.xml
+      and have it look like the listing below:
     %pre
       = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
-      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:1.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:2.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"threadQueueSize\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"5000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
@@ -185,7 +195,7 @@ layout: default
     %p
       Try to run the scenario again by the following command:
     %pre
-      $PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/resources/scenarios
+      $PERFCAKE_HOME/bin/perfcake.sh -s http-reporting
     %p
       You should see results very similar to the listing below, numbers will be different depending on the performance of your application:
     %pre
@@ -207,9 +217,9 @@ layout: default
     %p
       Just run your scenario with this property set to different values:
     %pre
-      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=1\n "
-      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=10\n "
-      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -sd $PERFCAKE_HOME/scenarios -Dthread.count=100\n "
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -Dthread.count=1\n "
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -Dthread.count=10\n "
+      = preserve "$PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -Dthread.count=100\n "
     %p
       After a half minute you should see different numbers for each run (if your application scales). Naturally, results of your meassurement won't be precise because of different conditions for each of your runs, for exact results, you will have to ensure same initial conditions for each run (i.e. restart the server, ensure some warm up period). For these advanced practices please refer to the
       = succeed "." do
