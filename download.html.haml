@@ -15,7 +15,7 @@ layout: default
       and checkout the
       %a.btn.btn-small{:href => "https://github.com/PerfCake/PerfCake"} Source Code Repository
 .row
-  .span4
+  .span6
     %h3 
       %i.icon-gear
       Binary Distribution
@@ -45,24 +45,7 @@ layout: default
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.zip" }
         %i.icon-download
         Download #{site.version} Binary Distribution (zip) &raquo;
-  .span4
-    %h3 
-      %i.icon-cogs
-      Binary Distribution with Java SE installation
-    %p
-      This a 
-      %strong ready to run
-      distribution of PerfCake. You do not need any additional dependencies. We even included a Java SE installation for your comfort. The price for that is a slightly larger installation.
-    %p 
-      This distribution format is not ready yet and is 
-      = succeed "." do
-        %a{ :href => 'https://github.com/PerfCake/PerfCake/issues/41', :target => '_blank' } scheduled for Release 3.0
-      Please check out later. We are sorry for the inconveniences. You could also try the source code download to the right.
-    %p
-      %a.btn.btn-primary.btn-big.disabled{ :href=>'#download' } 
-        %i.icon-download
-        Download Binary Distribution with JDK &raquo; 
-  .span4
+  .span6
     %h3 
       %i.icon-keyboard
       Source Code Distribution
