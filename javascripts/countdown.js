@@ -17,12 +17,6 @@ var _EX = {
    "13.0": {"y": 2019,"mo": 9,"d": 23,"h": 7,"mi": 50,"s": 0}
 }
 
-var _second = 1000;
-var _minute = _second * 60;
-var _hour = _minute * 60;
-var _day = _hour * 24;
-var timer;
-
 function getEndDate(_ver){
    var end = new Date();
    end.setUTCFullYear(_EX[_ver].y);
@@ -60,28 +54,23 @@ function getCurrentRelease(){
    }
 }
 
-function showRemaining() {
+function countdown() {
    var now = new Date();
    var currentRelease = getCurrentRelease();
    var nextRelease = getNextRelease();
    var end = getEndDate(nextRelease);
-   var distance = end - now;
-
-   var days = Math.floor(distance / _day);
-   var hours = Math.floor((distance % _day) / _hour);
-   var minutes = Math.floor((distance % _hour) / _minute);
-   var seconds = Math.floor((distance % _minute) / _second);
+   var distance = end.getTime() / 1000 - now.getTime() / 1000;
 
    var cdElement = document.getElementById('countdown');
    var cdElementHTML = '<span style="display: block; font-weight: bold; margin-bottom: 1em;">Welcome to PerfCake!</span>';
    cdElementHTML += '<a class="btn btn-primary btn-big" href="download"><i class="icon-info-sign icon-white">&nbsp;Version ' + currentRelease + ' is out &raquo;</i></a>';
    cdElementHTML += '<div style="clear: both;" /><br/>';
-   cdElementHTML += '<span style="display: block; white-space: nowrap;">Release ' + nextRelease + ' comming in:&nbsp;';
-   cdElementHTML += '<strong>' + (days < 100 ? (days < 10 ? '00' : '0') : '') + days + '</strong>d&nbsp;';
-   cdElementHTML += '<strong>' + (hours < 10 ? '0' : '') + hours + '</strong>h&nbsp;';
-   cdElementHTML += '<strong>' + (minutes < 10 ? '0' : '') + minutes + '</strong>m&nbsp;';
-   cdElementHTML += '<strong>' + (seconds < 10 ? '0' : '') + seconds + '</strong>s&nbsp;</span>';
+   cdElementHTML += '<span style="display: inline-block; white-space: nowrap;">Release ' + nextRelease + ' comming in:<div class="countdown-clock"/></span';
 
    cdElement.innerHTML = cdElementHTML;
+   clock = $('.countdown-clock').FlipClock(distance, {
+      clockFace: 'DailyCounter',
+      excludeDots: true,
+      countdown: true
+   });
 }
-timer = setInterval(showRemaining, 1000);

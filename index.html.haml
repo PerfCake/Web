@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
+
+%script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+%script{:type => "text/javascript", :src => "#{site.base_url}/javascripts/flipclock.min.js"}
 %script{:type => "text/javascript", :src => "#{site.base_url}/javascripts/countdown.js"}
+
 %header#overview.jumbotron.subhead
   .row
     .span7
@@ -11,12 +15,10 @@ layout: default
       %h1 
         %a.header{:href => "#{site.base_url}"} PerfCake
       %p.lead A Lightweight Performance Testing Framework
-    .span5
-      .well{:style => "padding: 25px 25px 15px 25px;", :id => "countdown"}
-        %script{:type => "text/javascript"}
-          showRemaining();
-        %div{:style => "clear:both"}
- 
+    .span5{:id => "countdown"}
+      %script{:type => "text/javascript"}
+        var clock;
+        $(document).ready(countdown());
 .page-header
   %h1 This is PerfCake!
   %p 
