@@ -56,7 +56,8 @@ layout: default
       │   ├── keystores/
       │   ├── messages/
       │   ├── scenarios/
-      │   └── schemas/
+      │   ├── schemas/
+      │   └── xslt/
       ├── LICENSE.txt
       ├── log4j.xml
       └── README.md
@@ -131,11 +132,11 @@ layout: default
       Now insert the following XML snippet in it:
     %pre
       = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
-      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:2.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:3.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/generator&gt;</span>\n "
-      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HTTPSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HttpSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"target\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"http://your-app.com/cool-app\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/sender&gt;</span>\n "
       = preserve "<span class=\"xml-tag\">&lt;/scenario&gt;\n "
@@ -147,7 +148,10 @@ layout: default
       You can see 
       %tt 
         = preserve "${thread.count:10}"
-      in the generator’s definition. That is a system property you may set and the actual value of the property will be used. If the property is not set, the default value (10) will be used.
+      in the generator’s definition. That is a system property
+      %tt
+        = preserve "thread.count"
+      that you may set and the actual value of the property will be used. If the property is not set, the default value (10) will be used.
     %p
       Now, all you need to do is to execute your new test scenario by running the following command:
     %pre
@@ -171,15 +175,15 @@ layout: default
       and have it look like the listing below:
     %pre
       = preserve "<span class=\"xml-tag\">&lt;?xml</span>&nbsp;<span class=\"xml-attr-name\">version</span>=<span class=\"xml-attr-value\">\"1.0\"</span>&nbsp;<span class=\"xml-attr-name\">encoding</span>=<span class=\"xml-attr-value\">\"utf-8\"</span><span class=\"xml-tag\">?&gt;</span>\n "
-      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:2.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "<span class=\"xml-tag\">&lt;scenario</span>&nbsp;<span class=\"xml-attr-name\">xmlns</span>=<span class=\"xml-attr-value\">\"urn:perfcake:scenario:3.0\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;generator</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"DefaultMessageGenerator\"</span>&nbsp;<span class=\"xml-attr-name\">threads</span>=<span class=\"xml-attr-value\">\"${thread.count:10}\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;run</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"10000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/generator</span><span class=\"xml-tag\">&gt;</span>\n "
-      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HTTPSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;sender</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"HttpSender\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;property</span>&nbsp;<span class=\"xml-attr-name\">name</span>=<span class=\"xml-attr-value\">\"target\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"http://your-app.com/cool-app\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/sender&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;reporting&gt;</span>\n "
-      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;reporter</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"ResponseTimeReporter\"</span><span class=\"xml-tag\">&gt;</span>\n "
+      = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;reporter</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"ResponseTimeStatsReporter\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;destination</span>&nbsp;<span class=\"xml-attr-name\">class</span>=<span class=\"xml-attr-value\">\"ConsoleDestination\"</span><span class=\"xml-tag\">&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;period</span>&nbsp;<span class=\"xml-attr-name\">type</span>=<span class=\"xml-attr-value\">\"time\"</span>&nbsp;<span class=\"xml-attr-name\">value</span>=<span class=\"xml-attr-value\">\"2000\"</span><span class=\"xml-tag\">/&gt;</span>\n "
       = preserve "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"xml-tag\">&lt;/destination&gt;</span>\n "
@@ -197,11 +201,17 @@ layout: default
     %p
       You should see results very similar to the listing below, numbers will be different depending on the performance of your application:
     %pre
-      = preserve "2013-09-14 10:31:49,685 INFO  [DefaultMessageGenerator] Starting to generate...\n "
-      = preserve "[0:00:02][313 iterations][20%] [62.901408450704224] [warmUp =&gt; false]\n "
-      = preserve "[0:00:04][671 iterations][40%] [71.16112084063047] [warmUp =&gt; false]\n "
-      = preserve "[0:00:06][1057 iterations][60%] [70.58725182863114] [warmUp =&gt; false]\n "
-      = preserve "[0:00:08][1437 iterations][80%] [98.85340314136126] [warmUp =&gt; false]\n "
+      = preserve "2014-09-22 16:02:29,722 INFO  [ScenarioExecution] === Welcome to PerfCake 3.0 ===\n "
+      = preserve "2014-09-22 16:02:29,745 INFO  [DefaultMessageGenerator] Starting to generate...\n "
+      = preserve "[0:00:02][101 iterations][20%] [153.601524] [Maximum => 493.399422] [Minimum => 137.903448] [Average => 178.72558479347822] [warmUp => false]\n "
+      = preserve "[0:00:04][223 iterations][40%] [138.697935] [Maximum => 493.399422] [Minimum => 136.856122] [Average => 165.1969354583334] [warmUp => false]\n "
+      = preserve "[0:00:06][356 iterations][60%] [561.241] [Maximum => 561.241] [Minimum => 136.802823] [Average => 161.6568149140401] [warmUp => false]\n "
+      = preserve "[0:00:08][488 iterations][80%] [141.950565] [Maximum => 561.241] [Minimum => 136.296136] [Average => 159.46751243035334] [warmUp => false]\n "
+      = preserve "2014-09-22 16:02:39,751 INFO  [DefaultMessageGenerator] Reached test end.\n "
+      = preserve "2014-09-22 16:02:39,751 INFO  [ReportManager] Reporting final results:\n "
+      = preserve "[0:00:10][621 iterations][100%] [151.259983] [Maximum => 561.241] [Minimum => 136.18406] [Average => 157.46288856933108] [warmUp => false]\n "
+      = preserve "2014-09-22 16:02:39,752 INFO  [DefaultMessageGenerator] Shutting down execution...\n "
+      = preserve "2014-09-22 16:02:39,884 INFO  [ScenarioExecution] === Goodbye! ===\n "
     %p
       The 
       %tt warmUp 
