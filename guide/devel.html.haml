@@ -33,15 +33,15 @@ layout: default
           %i.icon-download
           Developers' guide downloads
         %p
-          The downloads will be available soon. In the meantime, you can checkout
-          = succeed "." do
-            %a{:href => "https://github.com/PerfCake/Docs"} documentation source code repository on GitHub
+          %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/perfcake-developers-guide.pdf"}
+            %i.icon-download
+            Download Developers' Guide #{site.version} (PDF) &raquo;
+        %p
+          Looking for a documentation for an older version? You can checkout the
+          %a{:href => 'https://github.com/PerfCake/Docs'} source code repository
+          on GitHub and build it on your own.
         %p
           As a developer, you might be also interested in our 
           %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
             %i.icon-group
             Community &raquo;
-        .alert.alert-error
-          %i.icon-info-sign
-          %strong Downloads
-          are coming soon!
