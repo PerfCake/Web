@@ -64,10 +64,10 @@ function countdown() {
    var distance = end.getTime() / 1000 - now.getTime() / 1000;
 
    var cdElement = document.getElementById('countdown');
-   var cdElementHTML = '<span style="display: block; font-weight: bold; margin-bottom: 1em;">Welcome to PerfCake!</span>';
-   cdElementHTML += '<a class="btn btn-primary btn-big" href="download"><i class="icon-info-sign icon-white">&nbsp;Version ' + currentRelease + ' is out &raquo;</i></a>';
-   cdElementHTML += '<div style="clear: both;" /><br/>';
-   cdElementHTML += '<span style="display: inline-block; white-space: nowrap;">Release ' + nextRelease + ' comming in:<div class="countdown-clock"/></span';
+   var cdElementHTML = '<span><strong>Welcome to PerfCake!</strong></span>';
+   cdElementHTML += '<span class="pull-right"><a class="btn btn-primary btn-big" href="download"><i class="icon-info-sign icon-white">&nbsp;Version ' + currentRelease + ' is out &raquo;</i></a></span>';
+   cdElementHTML += '<div style="clear: both;" /><br/><br/>';
+   cdElementHTML += '<div style="display: inline-block; white-space: nowrap;">Time to release ' + nextRelease + ':<div class="countdown-clock" /></div>';
 
    cdElement.innerHTML = cdElementHTML;
    clock = $('.countdown-clock').FlipClock(distance, {

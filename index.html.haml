@@ -15,10 +15,12 @@ layout: default
       %h1 
         %a.header{:href => "#{site.base_url}"} PerfCake
       %p.lead A Lightweight Performance Testing Framework
-    .span5{:id => "countdown"}
-      %script{:type => "text/javascript"}
-        var clock;
-        $(document).ready(countdown());
+    .span5
+      .well{:style => "padding: 25px 25px 5px 25px; margin-bottom: 0px;"}
+        %span{:id => "countdown"}
+          %script{:type => "text/javascript"}
+            var clock;
+            $(document).ready(countdown());
 .page-header
   %h1 This is PerfCake!
   %p 
