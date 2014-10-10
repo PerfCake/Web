@@ -46,7 +46,7 @@ layout: default
       .row
         .span6.offset1
           %div#errors
-          %form.form-horizontal.well{:method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
+          %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
             %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
             %fieldset
               %legend Contact Us
@@ -65,11 +65,30 @@ layout: default
               .form-actions
                 %button.btn.btn-primary{:type => 'submit'} Send
       :javascript
-        var errors = decodeURI(window.location.search.
-            replace("?", "").replace("errors=", "").replace(/\+/g, '%20'));
-        if (errors) {
-          var div = document.getElementById("errors");
-          div.className = 'alert alert-error'
-          div.innerHTML = '<i class="icon-info-sign" />' + errors;
+        function parseGet() {
+          var errors = "";
+          var okSent = false;
+          var FormName = "contactForm";
+          var pos = location.href.indexOf('?');
+          if (pos < 0) { return; }
+          var q = location.href.substr(pos + 1);
+          var list = q.split('&');
+          for(var i = 0; i < list.length; i++) {
+            var kv = list[i].split('=');
+            kv[1] = unescape(kv[1].replace(/\+/g, '%20'));
+            if (kv[0] == "errors") {
+              errors = kv[1];
+            } else if (kv[0] == "sent") {
+              okSent = true;
+            } else {
+              kv[1] = kv[1].replace(/"/g,'\\"');
+              eval('document.' + FormName + '.' + kv[0] + '.value="' + kv[1] + '"');
+            }
+          }
+          if (errors) {
+            var div = document.getElementById("errors");
+            div.className = 'alert ' + (okSent ? 'alert-success' : 'alert-error');
+            div.innerHTML = '<i class="icon-info-sign" />&nbsp;' + errors;
+          }
         }
-          
+        parseGet();

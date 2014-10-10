@@ -1,5 +1,6 @@
 <?php
 	$errors = '';
+	$sent = false;
 
 	// pseudo-security check
 	if (empty($_POST['password'])) {
@@ -26,6 +27,7 @@
 	    
 	    if (empty($errors)) {
 	    	if (@mail('marvenec@gmail.com,pavel.macik@gmail.com', $subject, $message, $extra)) {
+	    		$sent = true;
 				$errors .= 'Message sent successfuly.<br />';
 			} else {
 				$errors .= 'We are sorry but we were not able to send your message.';
@@ -34,5 +36,12 @@
 
 	}
 
-	header('Location: https://www.perfcake.org/support/?errors=' . urlencode($errors), true, 302);
+	$locationBase = 'https://www.perfcake.org/support/?';
+	if ($sent) {
+		$location = $locationBase.'subject='.urlencode($subject).
+			'&from='.urlencode($from).'&message='.urlencode($message).'&errors='.urlencode($errors);
+	} else {
+		$location = $locationBase.'sent=true&errors='.urlencode($errors);
+	}
+	header('Location: '.$location, true, 302);
 ?>
