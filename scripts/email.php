@@ -38,10 +38,10 @@
 
 	$locationBase = 'https://www.perfcake.org/support/?';
 	if ($sent) {
+		$location = $locationBase.'sent=true&errors='.urlencode($errors);
+	} else {
 		$location = $locationBase.'subject='.urlencode($subject).
 			'&from='.urlencode($from).'&message='.urlencode($message).'&errors='.urlencode($errors);
-	} else {
-		$location = $locationBase.'sent=true&errors='.urlencode($errors);
 	}
 	header('Location: '.$location, true, 302);
 ?>
