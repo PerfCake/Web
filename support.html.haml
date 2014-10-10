@@ -43,7 +43,28 @@ layout: default
       %h2 
         %i.icon-ambulance
         Still in doubt?
-      .alert.alert-error
-        %i.icon-info-sign
-        %strong Contact form
-        is coming soon!
+      .row
+        .span6.offset1
+          %div#errors
+          %form.form-horizontal.well{:method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
+            %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
+            %fieldset
+              %legend Contact Us
+              .control-group
+                %label.control-label{:for => 'email'} Your Email
+                .controls
+                  %input.input-xlarge#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
+              .control-group
+                %label.control-label{:for => 'subject'} Message Subject
+                .controls
+                  %input.input-xlarge#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
+              .control-group
+                %label.control-label{:for => 'body'} Message Body
+                .controls
+                  %textarea.input-xlarge#body{:name => 'message', :placeholder => 'Enter the message body...', :required => 'true', :rows => 8}
+              .form-actions
+                %button.btn.btn-primary{:type => 'submit'} Send
+      :javascript
+        document.getElementById("errors").innerHTML = 
+          decodeURI(window.location.search.
+            replace("?", "").replace("errors=", "").replace(/\+/g, '%20'));
