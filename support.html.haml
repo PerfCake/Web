@@ -65,6 +65,11 @@ layout: default
               .form-actions
                 %button.btn.btn-primary{:type => 'submit'} Send
       :javascript
-        document.getElementById("errors").innerHTML = 
-          decodeURI(window.location.search.
+        var errors = decodeURI(window.location.search.
             replace("?", "").replace("errors=", "").replace(/\+/g, '%20'));
+        if (errors) {
+          var div = document.getElementById("errors");
+          div.className = 'alert alert-error'
+          div.innerHTML = '<i class="icon-info-sign" />' + errors;
+        }
+          
