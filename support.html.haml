@@ -15,7 +15,7 @@ layout: default
         %div{:style => "clear:both"}
   .row
     .span12
-      .page-header
+      %section#resources{:style => "padding-top:0px;"}
         %h2 
           %i.icon-question-sign
           Did you already try the following resources?
@@ -42,30 +42,31 @@ layout: default
             %strong #perfcake
             at
             %strong irc.freenode.net
-      %h2 
-        %i.icon-ambulance
-        Still in doubt?
-      .row
-        .span6.offset1
-          %div#errors
-          %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
-            %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
-            %fieldset
-              %legend Contact Us
-              .control-group
-                %label.control-label{:for => 'email'} Your Email
-                .controls
-                  %input.input-xlarge#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
-              .control-group
-                %label.control-label{:for => 'subject'} Message Subject
-                .controls
-                  %input.input-xlarge#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
-              .control-group
-                %label.control-label{:for => 'body'} Message Body
-                .controls
-                  %textarea.input-xlarge#body{:name => 'message', :placeholder => 'Enter the message body...', :required => 'true', :rows => 8}
-              .form-actions
-                %button.btn.btn-primary{:type => 'submit'} Send
+      %section#help
+        %h2 
+          %i.icon-ambulance
+          Still in doubt?
+        .row
+          .span6.offset1
+            %div#errors
+            %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
+              %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
+              %fieldset
+                %legend Contact Us
+                .control-group
+                  %label.control-label{:for => 'email'} Your Email
+                  .controls
+                    %input.input-xlarge#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
+                .control-group
+                  %label.control-label{:for => 'subject'} Message Subject
+                  .controls
+                    %input.input-xlarge#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
+                .control-group
+                  %label.control-label{:for => 'body'} Message Body
+                  .controls
+                    %textarea.input-xlarge#body{:name => 'message', :placeholder => 'Enter the message body...', :required => 'true', :rows => 8}
+                .form-actions
+                  %button.btn.btn-primary{:type => 'submit'} Send
       :javascript
         function parseGet() {
           var errors = "";

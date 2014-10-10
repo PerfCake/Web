@@ -24,29 +24,28 @@ layout: default
         %div{:style => "clear:both"}
   .row
     .span12
-      .page-header
-        %h2 
-          %i.icon-download
-          JavaDoc downloads
-        %p
-          Current version of JavaDoc from the master branch is #{site.version} and can be downloaded as a
-          %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/perfcake-#{site.version}-javadoc.jar"} 
-            %i.icon-archive
-            JavaDoc Archive &raquo;
-        %p
-          You can also read the documentation online
-          %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/", :target => "_blank"} 
-            %i.icon-book
-            Online JavaDoc &raquo;
-        %p
-          As a developer, you might be also interested in our 
-          %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
-            %i.icon-group
-            Community &raquo;
-        %p 
-          If you found the JavaDoc insufficient, we cannot encourage you enough to contribute 
-          = succeed "." do
-            %a{:href => "https://github.com/PerfCake/PerfCake/issues?state=open"} a fix
-        .alert.alert-error
-          %i.icon-info-sign
-          %strong Downloads for older versions will be available too.
+      %h2 
+        %i.icon-download
+        JavaDoc downloads
+      %p
+        Current version of JavaDoc from the master branch is #{site.version} and can be downloaded as a
+        %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/perfcake-#{site.version}-javadoc.jar"} 
+          %i.icon-archive
+          JavaDoc Archive &raquo;
+      %p
+        You can also read the documentation online
+        %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/", :target => "_blank"} 
+          %i.icon-book
+          Online JavaDoc &raquo;
+      %p
+        As a developer, you might be also interested in our 
+        %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
+          %i.icon-group
+          Community &raquo;
+      %p 
+        If you found the JavaDoc insufficient, we cannot encourage you enough to contribute 
+        = succeed "." do
+          %a{:href => "https://github.com/PerfCake/PerfCake/issues?state=open"} a fix
+      .alert.alert-error
+        %i.icon-info-sign
+        %strong Downloads for older versions will be available too.

@@ -24,15 +24,14 @@ layout: default
         %div{:style => "clear:both"}
   .row
     .span12
-      .page-header
-        %h2
+      %h2
+        %i.icon-download
+        Users' guide downloads
+      %p
+        %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/perfcake-user-guide.pdf"}
           %i.icon-download
-          Users' guide downloads
-        %p
-          %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/perfcake-user-guide.pdf"}
-            %i.icon-download
-            Download Users' Guide #{site.version} (PDF) &raquo;
-        %p
-          Looking for a documentation for an older version? You can checkout the
-          %a{:href => 'https://github.com/PerfCake/Docs'} source code repository
-          on GitHub and build it on your own.
+          Download Users' Guide #{site.version} (PDF) &raquo;
+      %p
+        Looking for a documentation for an older version? You can checkout the
+        %a{:href => 'https://github.com/PerfCake/Docs'} source code repository
+        on GitHub and build it on your own.
