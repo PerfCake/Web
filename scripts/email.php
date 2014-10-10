@@ -14,7 +14,7 @@
 		if (!empty($_POST['from'])) $from = htmlspecialchars($_POST['from']);
 		if (!empty($_POST['message'])) $message = htmlspecialchars($_POST['message']);
 
-		$extra = "From: Web Form <$from>\r\nReply-To: $from\r\nContent-type: text/plain; charset=\"UTF-8\"\r\n";
+		$extra = "From: PerfCake Web <$from>\r\nReply-To: $from\r\nContent-type: text/plain; charset=\"UTF-8\"\r\n";
 
 		if (empty($from)) {
 			$errors .= 'Please enter your email.<br />';
@@ -25,7 +25,7 @@
 		if (empty($message)) $errors .= 'Please enter the message body.<br />';
 	    
 	    if (empty($errors)) {
-	    	if (@mail('marvenec@gmail.com', $subject, $message, $extra)) {
+	    	if (@mail('marvenec@gmail.com,pavel.macik@gmail.com', $subject, $message, $extra)) {
 				$errors .= 'Message sent successfuly.<br />';
 			} else {
 				$errors .= 'We are sorry but we were not able to send your message.';
