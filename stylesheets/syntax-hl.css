@@ -9,3 +9,15 @@
 .xml-attr-value{
    color: rgb(21, 163, 15);
 }
+
+.dsl-keyword{
+   color: rgb(221, 72, 20);
+}
+
+.dsl-property{
+   color: rgb(39, 121, 211);
+}
+
+.dsl-value{
+   color: rgb(21, 163, 15);
+}
