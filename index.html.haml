@@ -11,7 +11,7 @@ layout: default
     .span7
       %span{:style => "float: left; margin: 0 15px 10px 0;"}
         %a.header{:href => "#{site.base_url}"}
-          %img{:src => "#{site.base_url}/images/logo.mid.png"}/
+          %img{:src => "#{site.base_url}/images/logo-revert.svg"}/
       %h1 
         %a.header{:href => "#{site.base_url}"} PerfCake
       %p.lead A Lightweight Performance Testing Framework
@@ -65,37 +65,27 @@ layout: default
       = succeed "." do
         %a{:href => "#{site.base_url}/community" } our community
     %ul
-      %li Release 4.0
+      %li Release 5.0
       %li 
-        Provide a 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/137", :target => "_blank"} solution for data visualization
-      %li 
-        Implement the possibility for using 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/136", :target => "_blank"} some nice expression language
-        in the scenarios
+        Redesign Generators
+        = precede "(" do
+          = succeed "," do
+            %a{:href => "https://github.com/PerfCake/PerfCake/issues/186", :target => "_blank"} Introduce Generator interface
+        = succeed ")" do
+          %a{:href => "https://github.com/PerfCake/PerfCake/issues/188", :target => "_blank"} Custom function bounded generator
       %li Finish User and Developers Guides and make sure they are user friendly
-      %li Write a blog article(s) comparing PerfCake to other performance testing tools
-      %li Write a blog article on integrating PerfCake in your application
-      %li Write a blog article on running PerfCake with a 3rd party messaging
-      %li Write a success story about using PerfCake on JBoss Fuse and JBoss EDS
-      %li Provide a sample report comparing standard industry solutions for JMS or WS
+      %li Improve PR on real world PerfCake usage
       %li
-        Develop 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/73", :target => "_blank"} Eclipse IDE plugin
-        for PerfCake
-      %li
-        Develop 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/80", :target => "_blank"} IntelliJ IDEA plugin
-        for PerfCake
-      %li
-        Develop 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/144", :target => "_blank"} NetBeans plugin
-        for PerfCake
-      %li
-        Add 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/94", :target => "_blank"} support for DSL 
-        scenario specification 
+        Redesign IDE plugins for PerfCake
+        = precede "(" do
+          = succeed ")" do
+            %a{:href => "https://github.com/PerfCake/PerfCake/issues/73", :target => "_blank"} Eclipse
+            %a{:href => "https://github.com/PerfCake/PerfCake/issues/80", :target => "_blank"} IntelliJ IDEA
+            %a{:href => "https://github.com/PerfCake/PerfCake/issues/144", :target => "_blank"} NetBeans
       %li Multiple PerfCake instances in a cluster should coordinate together (now they work as a separate units)
+      %li
+        Add the possibility to 
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/196", :target => "_blank"} read responses from a different communication channel
       %li 
         Make sure PerfCake is the best tool on the market 
         %i.icon-smile
