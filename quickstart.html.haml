@@ -142,7 +142,7 @@ layout: default
         \:
       %pre
         = preserve "<span class=\"dsl-keyword\">scenario</span>&nbsp;<span class=\"dsl-value\">\"http-echo\"</span>\n "
-        = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">run</span>&nbsp;<span class=\"dsl-value\">10.s</span>&nbsp;<span class=\"dsl-keyword\">with</span>&nbsp;<span class=\"dsl-value\">10.threads</span>\n "
+        = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">run</span>&nbsp;<span class=\"dsl-value\">10.s</span>&nbsp;<span class=\"dsl-keyword\">with</span>&nbsp;<span class=\"dsl-value\">${thread.count:10}.threads</span>\n "
         = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">generator</span>&nbsp;<span class=\"dsl-value\">\"DefaultMessageGenerator\"</span>\n "
         = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">sender</span>&nbsp;<span class=\"dsl-value\">\"HttpSender\"</span>&nbsp;<span class=\"dsl-property\">target</span>&nbsp;<span class=\"dsl-value\">\"http://your-app.com/cool-app\"</span>&nbsp;<span class=\"dsl-property\">method</span>&nbsp;<span class=\"dsl-value\">\"GET\"</span>\n "
         = preserve "<span class=\"dsl-keyword\">end</span>\n "
@@ -204,7 +204,7 @@ layout: default
         \:
       %pre
         = preserve "<span class=\"dsl-keyword\">scenario</span>&nbsp;<span class=\"dsl-value\">\"http-reporting\"</span>\n "
-        = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">run</span>&nbsp;<span class=\"dsl-value\">10.s</span>&nbsp;<span class=\"dsl-keyword\">with</span>&nbsp;<span class=\"dsl-value\">10.threads</span>\n "
+        = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">run</span>&nbsp;<span class=\"dsl-value\">10.s</span>&nbsp;<span class=\"dsl-keyword\">with</span>&nbsp;<span class=\"dsl-value\">${thread.count:10}.threads</span>\n "
         = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">generator</span>&nbsp;<span class=\"dsl-value\">\"DefaultMessageGenerator\"</span>\n "
         = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">sender</span>&nbsp;<span class=\"dsl-value\">\"HttpSender\"</span>&nbsp;<span class=\"dsl-property\">target</span>&nbsp;<span class=\"dsl-value\">\"http://your-app.com/cool-app\"</span>&nbsp;<span class=\"dsl-property\">method</span>&nbsp;<span class=\"dsl-value\">\"GET\"</span>\n "
         = preserve "&nbsp;&nbsp;<span class=\"dsl-keyword\">reporter</span>&nbsp;<span class=\"dsl-value\">\"ResponseTimeStatsReporter\"</span>&nbsp;<span class=\"dsl-property\">minimumEnabled</span>&nbsp;<span class=\"dsl-value\">\"false\"</span>&nbsp;<span class=\"dsl-property\">maximumEnabled</span>&nbsp;<span class=\"dsl-value\">\"false\"</span>\n "
