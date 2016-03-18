@@ -65,24 +65,16 @@ layout: default
       = succeed "." do
         %a{:href => "#{site.base_url}/community" } our community
     %ul
-      %li Release 5.0
+      %li Release 7.0
       %li 
-        Redesign Generators
-        = precede "(" do
-          = succeed "," do
-            %a{:href => "https://github.com/PerfCake/PerfCake/issues/186", :target => "_blank"} Introduce Generator interface
-        = succeed ")" do
+        Implement
           %a{:href => "https://github.com/PerfCake/PerfCake/issues/188", :target => "_blank"} Custom function bounded generator
       %li Finish User and Developers Guides and make sure they are user friendly
-      %li Improve PR on real world PerfCake usage
+      %li Start a video blog on performance testing with PerfCake
       %li
-        Redesign IDE plugins for PerfCake
-        = precede "(" do
-          = succeed ")" do
-            %a{:href => "https://github.com/PerfCake/PerfCake/issues/73", :target => "_blank"} Eclipse
-            %a{:href => "https://github.com/PerfCake/PerfCake/issues/80", :target => "_blank"} IntelliJ IDEA
-            %a{:href => "https://github.com/PerfCake/PerfCake/issues/144", :target => "_blank"} NetBeans
-      %li Multiple PerfCake instances in a cluster should coordinate together (now they work as a separate units)
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} Update IDE plugins for PerfCake
+      %li 
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/44", :target => "_blank"} Support for running PerfCake in a cluster
       %li
         Add the possibility to 
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/196", :target => "_blank"} read responses from a different communication channel
