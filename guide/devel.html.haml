@@ -7,7 +7,7 @@ layout: default
       %h1 
         %i.icon-book
         Developers' Guide
-      %p.lead Developers' guide is indented for those who would like to develop extensions on PerfCake be it message senders, generators, reporters, validator or anything else.
+      %p.lead Developers' guide is intended for those who would like to develop extensions on PerfCake, be it message senders, generators, reporters, validator or anything else.
     .span6
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Did you already try the other guides?
@@ -27,6 +27,8 @@ layout: default
       %h2 
         %i.icon-download
         Developers' guide downloads
+  .row
+    .span6
       %p Following are the links to the documentation of the latest release.
       %p
         %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/perfcake-developers-guide.pdf"}
@@ -36,8 +38,9 @@ layout: default
         %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/developers-guide/perfcake-developers-guide.html", :target => "_blank"}
           %i.icon-book
           Open Developers' Guide #{site.version} (HTML) &raquo;
+    .span6
       %p 
-        Here are the links to the nightly builds of the documentation. These correspond to the functionality of the unreleased developers branch of PerfCake.
+        The following links to the nightly builds of the documentation correspond to the functionality of the unreleased developers branch of PerfCake.
         However, the this documentation might have more details on topics related to the previous releases as well. This is mainly caused by the fact that the 
         guides are not yet complete in some sections.
       %p
@@ -52,6 +55,8 @@ layout: default
           Open Developers' Guide 
           %em NIGHTLY Build
           (HTML) &raquo;
+  .row
+    .span12
       %p
         Looking for a documentation for an older version? You can checkout the
         %a{:href => 'https://github.com/PerfCake/Docs'} source code repository
