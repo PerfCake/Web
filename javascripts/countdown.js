@@ -69,10 +69,7 @@ function countdown() {
    var distance = end.getTime() / 1000 - now.getTime() / 1000;
 
    var cdElement = document.getElementById('countdown');
-   var cdElementHTML = '<span><strong>Welcome to PerfCake!</strong></span>';
-   cdElementHTML += '<span class="pull-right"><a class="btn btn-primary btn-big" href="download"><i class="icon-info-sign icon-white">&nbsp;Version ' + currentRelease + ' is out &raquo;</i></a></span>';
-   cdElementHTML += '<div style="clear: both;" /><br/><br/>';
-   cdElementHTML += '<div style="display: inline-block; white-space: nowrap;">Time to release ' + nextRelease + ':<div class="countdown-clock" /></div>';
+   var cdElementHTML = '<h2>Time to release ' + nextRelease + '</h2><p class="countdown"><span class="countdown-clock" /></p>';
 
    cdElement.innerHTML = cdElementHTML;
    clock = $('.countdown-clock').FlipClock(distance, {
@@ -80,4 +77,15 @@ function countdown() {
       excludeDots: true,
       countdown: true
    });
+}
+
+function download() {
+   var now = new Date();
+   var currentRelease = getCurrentRelease();
+   var nextRelease = getNextRelease();
+   var end = getEndDate(nextRelease);
+   var distance = end.getTime() / 1000 - now.getTime() / 1000;
+
+   var cdElement = document.getElementById('download-text');
+   cdElement.innerHTML = cdElement.innerHTML + currentRelease + " &raquo;";
 }

@@ -2,15 +2,18 @@
 layout: default
 ---
 .row-fluid
-  .page-header
+  .page-header.jumbo
     %h1 
-      %i.icon-time
+      %i.fa.fa-forward
       Get Started
     %p.lead Get your performance benchmark running in 5 minutes.
 .row
-  .span4
+  .col-lg-12
     %h3 
-      %i.icon-download-alt
       Your first performance test
     %p
-      %a.btn{ :href=>"#{site.base_url}/docs/user-guide/ug.introduction.first-performance.test.html" } Start the tutorial &raquo;
+      The quickstart is now part of the documentation and you can see it online.
+    %p
+      %a.btn.btn-primary.btn-big{:href=>"#{site.base_url}/docs/user-guide/ug.introduction.first-performance.test.html"}
+        %i.fa.fa-play
+        Start the tutorial &raquo;

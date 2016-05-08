@@ -6,21 +6,18 @@ layout: default
 %script{:type => "text/javascript", :src => "#{site.base_url}/javascripts/flipclock.min.js"}
 %script{:type => "text/javascript", :src => "#{site.base_url}/javascripts/countdown.js"}
 
-%header#overview.jumbotron.subhead
-  .row
-    .span7
-      %span{:style => "float: left; margin: 0 15px 10px 0;"}
-        %a.header{:href => "#{site.base_url}"}
-          %img{:src => "#{site.base_url}/images/logo-revert.svg"}/
-      %h1 
-        %a.header{:href => "#{site.base_url}"} PerfCake
-      %p.lead A Lightweight Performance Testing Framework
-    .span5
-      .well{:style => "padding: 25px 25px 5px 25px; margin-bottom: 0px;"}
-        %span{:id => "countdown"}
-          %script{:type => "text/javascript"}
-            var clock;
-            $(document).ready(countdown());
+.row
+  .col-lg-12
+    %p.pull-right
+      %a.btn.btn-primary#download-text{:href => "download"} 
+        %i.fa.fa-download
+        Download version
+    %span{:style => "float: left; margin: 0 15px 10px 0;"}
+      %a.header{:href => "#{site.base_url}"}
+        %img{:src => "#{site.base_url}/images/logo-revert.svg"}/
+    %h1 
+      %a.header{:href => "#{site.base_url}"} PerfCake
+    %p.lead A Lightweight Performance Testing Framework
 .page-header
   %h1 This is PerfCake!
   %p 
@@ -30,7 +27,7 @@ layout: default
     %strong lovin' it!
     %a{:name => "about"}
 .row
-  .span6
+  .col-lg-6
     %h2 About
     %p
       PerfCake has a component design which means that you can build up your own tests from some basic building blocks. This allows a high flexibility in configuration and the components can be reused in different tests.
@@ -57,13 +54,15 @@ layout: default
         %a{:href => "http://www.youtube.com/watch?v=DXf3U2z4IJs", :target => "_blank"} piece of cake
     %p
       Where to go next? Continue with one of the links below
-      %i.icon-hand-down
-  .span6
+      %i.fa.fa-hand-o-down
+  .col-lg-6
     %h2 Goals
     %p 
       Although you can use PerfCake now and be happy with it, we are aware of many areas where it can be better. So here are a few items from our priority list. If you want to work on any of theese, this would be highly appreciated. Just join 
       = succeed "." do
         %a{:href => "#{site.base_url}/community" } our community
+    %p
+      In our short term plan are the following tasks and improvements.
     %ul
       %li Release 7.0
       %li 
@@ -73,6 +72,13 @@ layout: default
       %li Start a video blog on performance testing with PerfCake
       %li
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} Update IDE plugins for PerfCake
+      %li
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/268", :target => "_blank"} Fully utilize HdrHistogram and the ability to present the results in a chart
+    %p
+      Within a couple of the next releases we would also like to work on the following tasks to bring you the best possible experience with PerfCake.
+    %ul
+      %li
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} Update IDE plugins for PerfCake
       %li 
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/44", :target => "_blank"} Support for running PerfCake in a cluster
       %li
@@ -80,15 +86,21 @@ layout: default
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/196", :target => "_blank"} read responses from a different communication channel
       %li 
         Make sure PerfCake is the best tool on the market 
-        %i.icon-smile
+        %i.fa.fa-smile-o
     %p
       From a long term perspective, we would like to see PerfCake being used as a standard performance measurement tool. We believe to achieve this through its minimalistic component design, stable results, and easy usage.
+    %br/
+    %span{:id => "countdown"}
+      %script{:type => "text/javascript"}
+        var clock;
+        $(document).ready(countdown());
+        $(document).ready(download());
 .row
-  .span4
+  .col-lg-4
     %h2 Learn
     %ul
       %li
-        %i.icon-time
+        %i.fa.fa-clock-o
         %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
       %li
         %a{:href => "#{site.base_url}/guide/user"} Users'
@@ -99,7 +111,7 @@ layout: default
         %a{:href => "#{site.base_url}/javadoc"} JavaDoc
       %li
         %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read Success Stories on our Blog
-  .span4
+  .col-lg-4
     %h2 Get Involved
     %ul
       %li 
@@ -110,7 +122,7 @@ layout: default
         %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
       %li 
         %a{:href => 'https://perfcake.ci.cloudbees.com/', :target => "_blank"} Continuous Integration
-  .span4
+  .col-lg-4
     %h2 Stay Informed
     %ul
       %li 

@@ -1,20 +1,20 @@
 ---
 layout: default
 ---
-%header#overview.jumbotron.subhead
+%header#overview.jumbo
   .row
-    .span6
+    .col-lg-6
       %h1 
-        %i.icon-book
+        %i.fa.fa-book
         JavaDoc
       %p.lead Automatically generated Java documentation for PerfCake.
-    .span6
+    .col-lg-6
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} Did you already try the other guides?
         %span{:style => "display: block;"}
           %ul
             %li
-              %i.icon-time
+              %i.fa.fa-clock-o
               %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
               \- run your first benchmark in 5 minutes
             %li
@@ -23,29 +23,26 @@ layout: default
               %a{:href => "#{site.base_url}/guide/devel"} Developers' guide
         %div{:style => "clear:both"}
   .row
-    .span12
+    .col-lg-12
       %h2 
-        %i.icon-download
+        %i.fa.fa-download
         JavaDoc downloads
       %p
         Current version of JavaDoc from the master branch is #{site.version} and can be downloaded as a
         %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/perfcake-#{site.version}-javadoc.jar"} 
-          %i.icon-archive
+          %i.fa.fa-archive
           JavaDoc Archive &raquo;
       %p
         You can also read the documentation online
         %a.btn.btn-primary.btn-big{:href => "http://javadoc.perfcake.org/", :target => "_blank"} 
-          %i.icon-book
+          %i.fa.fa-book
           Online JavaDoc &raquo;
       %p
         As a developer, you might be also interested in our 
         %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
-          %i.icon-group
+          %i.fa.fa-group
           Community &raquo;
       %p 
-        If you found the JavaDoc insufficient, we cannot encourage you enough to contribute 
+        If you found a JavaDoc insufficient, we cannot encourage you enough to contribute 
         = succeed "." do
           %a{:href => "https://github.com/PerfCake/PerfCake/issues?state=open"} a fix
-      .alert.alert-error
-        %i.icon-info-sign
-        %strong Downloads for older versions will be available too.

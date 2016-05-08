@@ -2,16 +2,16 @@
 layout: default
 ---
 .row-fluid
-  .span12
-    .page-header
+  .col-lg-12
+    .page-header.jumbo
       %h1 
-        %i.icon-download-alt
+        %i.fa.fa-download
         Download
       %p.lead Please feel free to choose a distribution most appropriate for you.
 .row
-  .span6
+  .col-lg-6
     %h3 
-      %i.icon-gear
+      %i.fa.fa-gear
       Binary Distribution
     %p
       This a 
@@ -29,19 +29,19 @@ layout: default
       installed (we test only with Oracle JDK), both x86 and x86_64 architectures.
     %p
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.tar.bz2" } 
-        %i.icon-download
+        %i.fa.fa-download
         Download #{site.version} Binary Distribution (tar.bz2) &raquo; 
     %p
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.tar.gz" } 
-        %i.icon-download
+        %i.fa.fa-download
         Download #{site.version} Binary Distribution (tar.gz) &raquo; 
     %p
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-bin.zip" }
-        %i.icon-download
+        %i.fa.fa-download
         Download #{site.version} Binary Distribution (zip) &raquo;
-  .span6
+  .col-lg-6
     %h3 
-      %i.icon-keyboard
+      %i.fa.fa-keyboard
       Source Code Distribution
     %p
       This a distribution of the
@@ -56,13 +56,13 @@ layout: default
       this distribution.
     %p
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-src.tar.bz2" } 
-        %i.icon-download
+        %i.fa.fa-download
         Download #{site.version} Source Distribution (tar.bz2) &raquo; 
     %p
       %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/download/perfcake-#{site.version}-src.tar.gz" } 
-        %i.icon-download
+        %i.fa.fa-download
         Download #{site.version} Source Distribution (tar.gz) &raquo; 
     %p
       %a.btn.btn-primary.btn-big{ :href=>'https://github.com/PerfCake/PerfCake/archive/master.zip' } 
-        %i.icon-download
+        %i.fa.fa-download
         Download the Source Code from GitHub (zip) &raquo; 

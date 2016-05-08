@@ -1,30 +1,30 @@
 ---
 layout: default
 ---
-%header#overview.jumbotron.subhead
+%header#overview.jumbo
   .row
-    .span6
+    .col-lg-6
       %h1 
-        %i.icon-phone
+        %i.fa.fa-phone
         Support
       %p.lead How can we help you?
-    .span6
+    .col-lg-6
       .well{:style => "padding: 25px 25px 15px 25px;"}
         %span{:style => "display: block; font-weight: bold; margin-bottom: 1em;"} We are good at performance testing!
         %span{:style => "display: block;"} If you still do not feel strong enough after going through the guides or you need any advise on performance testing of your application, just give us a try.
         %div{:style => "clear:both"}
   .row
-    .span12
+    .col-lg-12
       %section#resources{:style => "padding-top:0px;"}
         %h2 
-          %i.icon-question-sign
+          %i.fa.fa-question-circle
           Did you already try the following resources?
         %ul
           %li 
             We have various guides available
             %ul
               %li
-                %i.icon-time
+                %i.fa.fa-clock-o
                 %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
                 \- run your first benchmark in 5 minutes
               %li
@@ -37,36 +37,44 @@ layout: default
             Try asking at
             %a{:href => "https://groups.google.com/forum/#!forum/perfcake", :target => "_blank"} PerfCake Google Group
           %li 
-            %i.icon-comments
+            %i.fa.fa-comments
             our Community IRC channel 
             %strong #perfcake
             at
             %strong irc.freenode.net
       %section#help
         %h2 
-          %i.icon-ambulance
+          %i.fa.fa-ambulance
           Still in doubt?
         .row
-          .span6.offset1
+          .col-lg-12
+            %p
+              We can help you with an analysis of what performance tests you might need, how your architecture needs to be accomodated,
+              how to enable your organization in efficient performance testing. We can design and implement a solid test plan at the
+              level of detail you want. We can develop any other PerfCake component that might be needed to satisfy your requirements,
+              and we can execute the performance tests for you.
+        .row
+          .col-lg-8.col-lg-offset-2
             %div#errors
             %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
               %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
               %fieldset
                 %legend Contact Us
-                .control-group
-                  %label.control-label{:for => 'email'} Your Email
-                  .controls
-                    %input.input-xlarge#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
-                .control-group
-                  %label.control-label{:for => 'subject'} Message Subject
-                  .controls
-                    %input.input-xlarge#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
-                .control-group
-                  %label.control-label{:for => 'body'} Message Body
-                  .controls
-                    %textarea.input-xlarge#body{:name => 'message', :placeholder => 'Enter the message body...', :required => 'true', :rows => 8}
-                .form-actions
-                  %button.btn.btn-primary{:type => 'submit'} Send
+                .form-group
+                  %label.col-lg-3.control-label{:for => 'email'} Your Email
+                  .col-lg-9
+                    %input.form-control#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
+                .form-group
+                  %label.col-lg-3.control-label{:for => 'subject'} Message Subject
+                  .col-lg-9
+                    %input.form-control#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
+                .form-group
+                  %label.col-lg-3.control-label{:for => 'body'} Message Body
+                  .col-lg-9
+                    %textarea.form-control#body{:name => 'message', :placeholder => 'Enter the message body...', :required => 'true', :rows => 8}
+                .form-group
+                  .col-lg-9.col-lg-offset-3
+                    %button.btn.btn-primary{:type => 'submit'} Send
       :javascript
         function parseGet() {
           var errors = "";
@@ -91,7 +99,7 @@ layout: default
           if (errors) {
             var div = document.getElementById("errors");
             div.className = 'alert ' + (okSent ? 'alert-success' : 'alert-error');
-            div.innerHTML = '<i class="icon-info-sign" />&nbsp;' + errors;
+            div.innerHTML = '<i class="fa fa-exclamation-triangle" />&nbsp;' + errors;
           }
         }
         parseGet();
