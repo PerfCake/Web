@@ -17,12 +17,19 @@ footer p {
     margin-left: -15px;
     margin-right: -15px;
 }
-@media (min-width: 964px) {
+
+@media (max-width: 768px) {
+	a.header img {
+		width: 54px;
+	}
+}
+
+@media (min-width: 992px) {
 	body {
 		padding-top:60px
 	}
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
 	.container > .navbar-header,
 	.container-fluid > .navbar-header,
 	.container > .navbar-collapse,
@@ -30,9 +37,9 @@ footer p {
 	  margin-right: 15px;
 	  margin-left: 15px;
 	}
-	.navbar-brand {
+/*	.navbar-brand {
 		padding-top: 15px;
-	}
+	}*/
 }
 
 .bs-docs-section {
