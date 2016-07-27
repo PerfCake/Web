@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r"
    sodipodi:docname="project-poster.svg"
-   inkscape:export-filename="/home/mvecera/perfcake-poster-lab.png"
+   inkscape:export-filename="/home/mvecera/perfcake-poster-lab-with-bg.png"
    inkscape:export-xdpi="600.02155"
    inkscape:export-ydpi="600.02155">
   <defs
@@ -65,9 +65,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="200.02713"
-     inkscape:cy="762.01181"
+     inkscape:zoom="1"
+     inkscape:cx="351.39702"
+     inkscape:cy="536.66147"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -101,9 +101,10 @@
      id="layer1">
     <path
        style="fill:#dd4814;fill-opacity:1;stroke:none;stroke-width:2.35768938;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 0,7e-5 0,471.125 190.09375,0 -0.83203,-0.21875 0.1582,-0.002 -0.1582,-0.0508 39.19531,-0.35352 c 14.00064,0.125 24.61998,-38.89062 38.625,-38.89063 l 436.48633,0 c 16.05707,0 21.14812,37.58145 36.77539,39.51563 l 3.7461,0 0,-471.125 L 0,0 Z"
+       d="m 0,7e-5 0,471.125 c 0,0 218.119,-0.11912 228.45703,-0.0626 14.00064,0.125 24.61998,-39.45312 38.625,-39.45313 l 436.48633,0 c 16.05707,0 21.14812,37.58145 36.77539,39.51563 l 3.7461,0 0,-471.125 L 0,0 Z"
        id="path8367"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccssccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
