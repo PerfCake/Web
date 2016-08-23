@@ -66,7 +66,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="351.39702"
+     inkscape:cx="350.39702"
      inkscape:cy="536.66147"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -626,7 +626,7 @@
            x="60"
            y="224.3622" /></flowRegion><flowPara
          id="flowPara6541"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:250%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;fill-opacity:1">A healt status dashboard for your (u-)services (IoT ready)</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:250%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;fill-opacity:1">A health status dashboard for your (μ-)services (IoT ready)</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:250%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;fill-opacity:1"
          id="flowPara6543">Most performant open-source load generator</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:250%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;fill-opacity:1"
@@ -637,14 +637,14 @@
          id="flowPara6555" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#dd4814;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="144.00037"
+       x="182.15466"
        y="522.36218"
        id="text8269"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan8271"
-         x="144.00037"
-         y="522.36218">Where you could help?</tspan></text>
+         x="182.15466"
+         y="522.36218">How can you help?</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot8273"
