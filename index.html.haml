@@ -32,22 +32,27 @@ layout: default
     %p
       PerfCake has a component design which means that you can build up your own tests from some basic building blocks. This allows a high flexibility in configuration and the components can be reused in different tests.
     %p 
-      PerfCake has a pluggable architecture with many supported interfaces/protocols out of the box (HTTP, REST, JMS, JDBC, SOAP, socket, file etc.).
+      PerfCake has a pluggable architecture with many supported interfaces/protocols out of the box (HTTP, REST, JMS, JDBC, SOAP, socket, file etc.). To cover some complex scenarios, PerfCake can use different procols to
+      send requests and to receive responses (e.g. send via JMS and receive via HTTP).
       If you need support for another interface ask
       %a{:href => "#{site.base_url}/community" } our community
       or provide the implementation. It is really easy!
     %p
-      Except for interfaces/protocols, PerfCake also supports various means of generating the load. It can send a preset count of messages, it can send as many messages as the target system is able to consume for a given period of time, or it can carefully aim for maximum allowable throughput.
+      Except for interfaces/protocols, PerfCake can be used for any type of performance testing including load testing, stress testing, endurance/soak testing, scalability testing or benchmarking. PerfCake is capable to automatically find
+      the sweet spot of a system under test in a relatively short time with minimal efforts. Compared to other tools, PerfCake is one of the most performant and reliable in the load generation.
     %p
-      What would be a measurement with proper reports?! PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others. There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet. In the future we plan to add more output formats as the requests arise.
+      PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others. 
+      There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet, and it is possible to generate live charts that can be viewed on the fly during a running test. 
+      PerfCake can store results in the PerfRepo result repository for easy comparison to previous measurements.
     %p
-      What if the target system crashed and just quickly returns error messages? There are validators that can validate the response to see if everything is OK. With validators you can also use PerfCake to write an end-to-end test of your system. Like in case of JDBC - when you provide a list of SQL commands and expected results.
+      There are validators that can validate the response to see if the system under test operates correctly. With validators you can also use PerfCake to write an end-to-end test of your system. Like in case of JDBC - when you provide a list of SQL commands and expected results.
     %p
-      To run PerfCake, one just needs to supply a so called "scenario". This is an XML file that describes the building blocks that should be used together. Then you just run the scenario using Maven or a prepared shell script if you downloaded just the binaries.
+      To run PerfCake, you just need to supply a so called "scenario". This is an XML-based recipe file that describes the building blocks of the performance test. The scenario can be included into you application lifecycle using Maven, or 
+      it can be directly invoked from a test via 
+      = succeed "," do
+        %a{:href => "#{site.base_url}/javadoc"} PerfCake fluent API
+      or as a standalone application from a command line.
       %em We understand the need for an IDE plugin and this is one of our short term goals.
-      You can also use PerfCake in your application using its 
-      = succeed "." do
-        %a{:href => "#{site.base_url}/javadoc"} API
     %p
       We hope to make your performance testing a real 
       = succeed "." do
@@ -58,32 +63,25 @@ layout: default
   .col-lg-6
     %h2 Goals
     %p 
-      Although you can use PerfCake now and be happy with it, we are aware of many areas where it can be better. So here are a few items from our priority list. If you want to work on any of theese, this would be highly appreciated. Just join 
+      We strive to keep PerfCake a bleeding edge technology for performance testing. This requires a continuous improvement and enhancement. Following are a few items from our priority list. If you want to work on any of theese, we would be
+      very happy to welcome you in
       = succeed "." do
         %a{:href => "#{site.base_url}/community" } our community
-    %p
-      In our short term plan are the following tasks and improvements.
     %ul
-      %li Release 7.0
+      %li Improve reporting, for PerfCake to automatically provide the most useful information about system under test
+      %li Develop more senders and receivers
+      %li We finally have someone working on 
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} IDE plugins that will be really cool 
+        (planned support for IntelliJ Idea, Eclipse and NetBeans)
       %li 
-        Implement
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/188", :target => "_blank"} Custom function bounded generator
-      %li Finish User and Developers Guides and make sure they are user friendly
-      %li Start a video blog on performance testing with PerfCake
-      %li
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} Update IDE plugins for PerfCake
-      %li
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/268", :target => "_blank"} Fully utilize HdrHistogram and the ability to present the results in a chart
-    %p
-      Within a couple of the next releases we would also like to work on the following tasks to bring you the best possible experience with PerfCake.
-    %ul
-      %li
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} Update IDE plugins for PerfCake
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/44", :target => "_blank"} Automated clustering support is under development
+      %li Write a 
+        %a{:href => "https://leanpub.com/perfcake", :target => "_blank"} cook book with PerfCake recipes
+        including videos and sources
       %li 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/44", :target => "_blank"} Support for running PerfCake in a cluster
-      %li
-        Add the possibility to 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/196", :target => "_blank"} read responses from a different communication channel
+        Make sure PerfCake is
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/263", :target => "_blank"} microservices and IoT ready
+      %li Rework PerfRepo UI to make it easier to configure and use based on recent feedback
       %li 
         Make sure PerfCake is the best tool on the market 
         %i.fa.fa-smile-o
