@@ -47,7 +47,10 @@ layout: default
     %p
       There are validators that can validate the response to see if the system under test operates correctly. With validators you can also use PerfCake to write an end-to-end test of your system.
     %p
-      To run PerfCake, you just need to supply a so called "scenario". This is an XML-based recipe file that describes the building blocks of the performance test. The scenario can be included into you application lifecycle using Maven, or 
+      To run PerfCake, you just need to supply a so called 
+      = succeed "." do
+        %em scenario 
+      This is an XML-based recipe file that describes the building blocks of the performance test. The scenario can be included into you application lifecycle using Maven, or 
       it can be directly invoked from a test via 
       = succeed "," do
         %a{:href => "#{site.base_url}/javadoc"} PerfCake fluent API
