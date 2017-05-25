@@ -4,7 +4,7 @@ layout: default
 %header#overview.jumbo
   .row
     .col-lg-6
-      %h1 
+      %h1
         %i.fa.fa-phone
         Support
       %p.lead How can we help you?
@@ -16,16 +16,16 @@ layout: default
   .row
     .col-lg-12
       %section#resources{:style => "padding-top:0px;"}
-        %h2 
+        %h2
           %i.fa.fa-question-circle
           Did you already try the following resources?
         %ul
-          %li 
+          %li
             We have various guides available
             %ul
               %li
                 %i.fa.fa-clock-o
-                %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
+                %a{:href => "#{site.base_url}/quickstart"} Quickstart Example
                 \- run your first benchmark in 5 minutes
               %li
                 %a{:href => "#{site.base_url}/guide/user"} Users' guide
@@ -33,17 +33,17 @@ layout: default
                 %a{:href => "#{site.base_url}/guide/devel"} Developers' guide
               %li
                 %a{:href => "#{site.base_url}/javadoc"} JavaDoc
-          %li 
+          %li
             Try asking at
             %a{:href => "https://groups.google.com/forum/#!forum/perfcake", :target => "_blank"} PerfCake Google Group
-          %li 
+          %li
             %i.fa.fa-comments
-            our Community IRC channel 
+            our Community IRC channel
             %strong #perfcake
             at
             %strong irc.freenode.net
       %section#help
-        %h2 
+        %h2
           %i.fa.fa-ambulance
           Still in doubt?
         .row
@@ -56,18 +56,18 @@ layout: default
         .row
           .col-lg-8.col-lg-offset-2
             %div#errors
-            %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://www.perfcake.org/scripts/email.php'}
-              %input{:type => 'hidden', :name => 'password', :value => 'perfCakeSecret123'}
+            %form.form-horizontal.well{:name=> 'contactForm', :method => 'POST', :action => 'https://formspree.io/support@perfcake.org'}
+              %input{:type => 'text', :name => '_gotcha', :style => 'display: none;'}
               %fieldset
                 %legend Contact Us
                 .form-group
                   %label.col-lg-3.control-label{:for => 'email'} Your Email
                   .col-lg-9
-                    %input.form-control#email{:type => 'text', :name => 'from', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
+                    %input.form-control#email{:type => 'email', :name => '_replyto', :placeholder => 'Enter your email...', :autofocus => 'true', :required => 'true'}
                 .form-group
                   %label.col-lg-3.control-label{:for => 'subject'} Message Subject
                   .col-lg-9
-                    %input.form-control#subject{:type => 'text', :name => 'subject', :placeholder => 'Enter the message subject...', :required => 'true'}
+                    %input.form-control#subject{:type => 'text', :name => '_subject', :placeholder => 'Enter the message subject...', :required => 'true'}
                 .form-group
                   %label.col-lg-3.control-label{:for => 'body'} Message Body
                   .col-lg-9
@@ -75,31 +75,3 @@ layout: default
                 .form-group
                   .col-lg-9.col-lg-offset-3
                     %button.btn.btn-primary{:type => 'submit'} Send
-      :javascript
-        function parseGet() {
-          var errors = "";
-          var okSent = false;
-          var FormName = "contactForm";
-          var pos = location.href.indexOf('?');
-          if (pos < 0) { return; }
-          var q = location.href.substr(pos + 1);
-          var list = q.split('&');
-          for(var i = 0; i < list.length; i++) {
-            var kv = list[i].split('=');
-            kv[1] = unescape(kv[1].replace(/\+/g, '%20'));
-            if (kv[0] == "errors") {
-              errors = kv[1];
-            } else if (kv[0] == "sent") {
-              okSent = true;
-            } else {
-              kv[1] = kv[1].replace(/"/g,'\\"');
-              eval('document.' + FormName + '.' + kv[0] + '.value="' + kv[1] + '"');
-            }
-          }
-          if (errors) {
-            var div = document.getElementById("errors");
-            div.className = 'alert ' + (okSent ? 'alert-success' : 'alert-error');
-            div.innerHTML = '<i class="fa fa-exclamation-triangle" />&nbsp;' + errors;
-          }
-        }
-        parseGet();
