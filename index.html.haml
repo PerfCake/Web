@@ -1,4 +1,4 @@
----
+?---
 layout: default
 ---
 
@@ -9,21 +9,21 @@ layout: default
 .row
   .col-lg-12
     %p.pull-right
-      %a.btn.btn-primary#download-text{:href => "download"} 
+      %a.btn.btn-primary#download-text{:href => "download"}
         %i.fa.fa-download
         Download version
     %span{:style => "float: left; margin: 0 15px 10px 0;"}
       %a.header{:href => "#{site.base_url}"}
         %img{:src => "#{site.base_url}/images/logo-revert.svg"}/
-    %h1 
+    %h1
       %a.header{:href => "#{site.base_url}"} PerfCake
     %p.lead A Lightweight Performance Testing Framework
 .page-header
   %h1 This is PerfCake!
-  %p 
-    PerfCake is a lightweight performance testing tool and a load generator with the aim to be minimalistic, easy to use, provide stable results, have minimum influence on the measured system, be platform independent, use component design, allow high throughput. 
   %p
-    Just give it a try and soon you'll be 
+    PerfCake is a lightweight performance testing tool and a load generator with the aim to be minimalistic, easy to use, provide stable results, have minimum influence on the measured system, be platform independent, use component design, allow high throughput.
+  %p
+    Just give it a try and soon you'll be
     %strong lovin' it!
     %a{:name => "about"}
 .row
@@ -31,7 +31,7 @@ layout: default
     %h2 About
     %p
       PerfCake has a component design which means that you can build up your own tests from some basic building blocks. This allows a high flexibility in configuration and the components can be reused in different tests.
-    %p 
+    %p
       PerfCake has a pluggable architecture with many supported interfaces/protocols out of the box (HTTP, REST, JMS, JDBC, SOAP, socket, file etc.). To cover some complex scenarios, PerfCake can use different procols to
       send requests and to receive responses (e.g. send via JMS and receive via HTTP).
       If you need support for another interface ask
@@ -41,23 +41,23 @@ layout: default
       Except for interfaces/protocols, PerfCake can be used for any type of performance testing including load testing, stress testing, endurance/soak testing, scalability testing or benchmarking. PerfCake is capable to automatically find
       the sweet spot of a system under test in a relatively short time with minimal efforts. Compared to other tools, PerfCake is one of the most performant and reliable in the load generation.
     %p
-      PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others. 
-      There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet, and it is possible to generate live charts that can be viewed on the fly during a running test. 
+      PerfCake supports various means of reporting the measured values including average throughput (possibly over a time window), memory consumption of the target JVM with linear regression analysis to see if there is a memory leak and others.
+      There are various output formats supported. Except for console or a log file, we support CSV that can be imported as a spreadsheet, and it is possible to generate live charts that can be viewed on the fly during a running test.
       PerfCake can store results in the PerfRepo result repository for easy comparison to previous measurements.
     %p
       There are validators that can validate the response to see if the system under test operates correctly. With validators you can also use PerfCake to write an end-to-end test of your system.
     %p
-      To run PerfCake, you just need to supply a so called 
+      To run PerfCake, you just need to supply a so called
       = succeed "." do
-        %em scenario 
-      This is an XML-based recipe file that describes the building blocks of the performance test. The scenario can be included into you application lifecycle using Maven, or 
-      it can be directly invoked from a test via 
+        %em scenario
+      This is an XML-based recipe file that describes the building blocks of the performance test. The scenario can be included into you application lifecycle using Maven, or
+      it can be directly invoked from a test via
       = succeed "," do
         %a{:href => "#{site.base_url}/javadoc"} PerfCake fluent API
       or as a standalone application from a command line.
       %em We understand the need for an IDE plugin and this is one of our short term goals.
     %p
-      We hope to make your performance testing a real 
+      We hope to make your performance testing a real
       = succeed "." do
         %a{:href => "http://www.youtube.com/watch?v=DXf3U2z4IJs", :target => "_blank"} piece of cake
     %p
@@ -65,7 +65,7 @@ layout: default
       %i.fa.fa-hand-o-down
   .col-lg-6
     %h2 Goals
-    %p 
+    %p
       We strive to keep PerfCake a bleeding edge technology for performance testing. This requires a continuous improvement and enhancement. Following are a few items from our priority list. If you want to work on any of theese, we would be
       very happy to welcome you in
       = succeed "." do
@@ -73,22 +73,22 @@ layout: default
     %ul
       %li Improve reporting, for PerfCake to automatically provide the most useful information about system under test
       %li Develop more senders and receivers
-      %li 
-        We finally have someone working on 
-        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} IDE plugins that will be really cool 
+      %li
+        We finally have someone working on
+        %a{:href => "https://github.com/PerfCake/PerfCake/issues/270", :target => "_blank"} IDE plugins that will be really cool
         (planned support for IntelliJ Idea, Eclipse and NetBeans)
-      %li 
+      %li
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/44", :target => "_blank"} Automated clustering support is under development
-      %li 
-        Write a 
+      %li
+        Write a
         %a{:href => "https://leanpub.com/perfcake", :target => "_blank"} cook book with PerfCake recipes
         including videos and sources
-      %li 
+      %li
         Make sure PerfCake is
         %a{:href => "https://github.com/PerfCake/PerfCake/issues/263", :target => "_blank"} microservices and IoT ready
       %li Rework PerfRepo UI to make it easier to configure and use based on recent feedback
-      %li 
-        Make sure PerfCake is the best tool on the market 
+      %li
+        Make sure PerfCake is the best tool on the market
         %i.fa.fa-smile-o
     %p
       From a long term perspective, we would like to see PerfCake being used as a standard performance measurement tool. We believe to achieve this through its minimalistic component design, stable results, and easy usage.
@@ -104,31 +104,27 @@ layout: default
     %ul
       %li
         %i.fa.fa-clock-o
-        %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
+        %a{:href => "#{site.base_url}/quickstart"} Quickstart Example
       %li
         %a{:href => "#{site.base_url}/guide/user"} Users'
         and
         %a{:href => "#{site.base_url}/guide/devel"} Developers'
         guide
       %li
-        %a{:href => "#{site.base_url}/javadoc"} JavaDoc
-      %li
         %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read Success Stories on our Blog
   .col-lg-4
     %h2 Get Involved
     %ul
-      %li 
+      %li
         %a{:href => "#{site.base_url}/community"} Community
-      %li 
+      %li
         %a{:href => "https://github.com/PerfCake/PerfCake/issues", :target => "_blank"} Issue Tracker
-      %li 
+      %li
         %a{:href => "https://github.com/PerfCake/PerfCake", :target => "_blank"} Source Code
-      %li 
-        %a{:href => 'https://perfcake.ci.cloudbees.com/', :target => "_blank"} Continuous Integration
   .col-lg-4
     %h2 Stay Informed
     %ul
-      %li 
+      %li
         %a{:href => "https://twitter.com/search?q=PerfCakeTool", :alt => "Browse the PerfCakeTool on Twitter", :target => "_blank"} Watch us on Twitter
       %li
         %a{:href => "http://perfcake.blogspot.com", :alt => "Read the blog", :target => "_blank"} Read our Blog
@@ -138,5 +134,3 @@ layout: default
       %li
         %i.fa.fa-leanpub
           %a{:href => "https://leanpub.com/perfcake", :alt => "PerfCake: Performance Testing Scenarios book", :target => "_blank"} Performance Testing Scenarios
-
-

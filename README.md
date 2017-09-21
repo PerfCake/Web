@@ -1,7 +1,7 @@
 Web
 ===
 
-PerfCake Web Site - please visit us at https://www.perfcake.org
+PerfCake Web Site - please visit us at http://www.perfcake.org
 
 Versioning
 ----------

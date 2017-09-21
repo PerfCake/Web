@@ -4,7 +4,7 @@ layout: default
 %header#overview.jumbo
   .row
     .col-lg-6
-      %h1 
+      %h1
         %i.fa.fa-book
         Developers' Guide
       %p.lead Developers' guide is intended for those who would like to develop extensions on PerfCake, be it message senders, generators, reporters, validator or anything else.
@@ -15,57 +15,36 @@ layout: default
           %ul
             %li
               %i.fa.fa-clock-o
-              %a{:href => "#{site.base_url}/quickstart"} Quickstart Example 
+              %a{:href => "#{site.base_url}/quickstart"} Quickstart Example
               \- run your first benchmark in 5 minutes
             %li
               %a{:href => "#{site.base_url}/guide/user"} Users' guide
-            %li
-              %a{:href => "#{site.base_url}/javadoc"} JavaDoc
         %div{:style => "clear:both"}
   .row
     .col-lg-12
-      %h2 
+      %h2
         %i.fa.fa-download
         Developers' guide downloads
-  .row
-    .col-lg-6
       %p Following are the links to the documentation of the latest release.
       %p
-        %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/perfcake-developers-guide.pdf"}
+        %a.btn.btn-primary.btn-big{ :href=>"https://github.com/PerfCake/Docs/releases/download/v#{site.version}/perfcake-developers-guide.pdf"}
           %i.fa.fa-download
           Download Developers' Guide #{site.version} (PDF) &raquo;
       %p
         %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs/developers-guide/perfcake-developers-guide.html", :target => "_blank"}
           %i.fa.fa-book
           Open Developers' Guide #{site.version} (HTML) &raquo;
-    .col-lg-6
-      %p 
-        The following links to the nightly builds of the documentation correspond to the functionality of the unreleased developers branch of PerfCake.
-        However, the this documentation might have more details on topics related to the previous releases as well. This is mainly caused by the fact that the 
-        guides are not yet complete in some sections.
-      %p
-        %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs-devel/perfcake-developers-guide.pdf"}
-          %i.fa.fa-download
-          Download Developers' Guide 
-          %em NIGHTLY Build
-          (PDF) &raquo;
-      %p
-        %a.btn.btn-primary.btn-big{ :href=>"#{site.base_url}/docs-devel/developers-guide/perfcake-developers-guide.html", :target => "_blank"}
-          %i.fa.fa-book
-          Open Developers' Guide 
-          %em NIGHTLY Build
-          (HTML) &raquo;
   .row
     .col-lg-12
       %p
         Looking for a documentation for an older version? You can checkout the
         %a{:href => 'https://github.com/PerfCake/Docs'} source code repository
-        on GitHub and build it on your own. Old documentation is in branches called 
+        on GitHub and build it on your own. Old documentation is in branches called
         = succeed "." do
           %em release-${version}
       %p
-        As a developer, you might be also interested in our 
+        As a developer, you might be also interested in our
       %p
-        %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"} 
+        %a.btn.btn-primary.btn-big{:href => "#{site.base_url}/community"}
           %i.fa.fa-group
           Community &raquo;
