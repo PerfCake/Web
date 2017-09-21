@@ -3,3 +3,7 @@ _tmp
 .awestruct
 web.sublime*
 awestruct.sh
+schema/*.xsd
+docs
+*.zip
+*.zip.*
