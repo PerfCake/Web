@@ -5,12 +5,7 @@ if [ -z "${VERSION}" ]; then
   exit 1
 fi
 
-wget https://github.com/PerfCake/Docs/releases/download/v${VERSION}/perfcake-docs-html.zip && unzip -o -d docs perfcake-docs-html.zip && rm perfcake-docs-html.zip
-
-
-
 wget https://github.com/PerfCake/PerfCake/archive/devel.zip
-
 if [[ -f devel.zip ]];
 then
         unzip -o devel.zip -d xsd.install
@@ -27,6 +22,8 @@ mv _config/site.yml.orig _config/site.yml
 wget https://github.com/PerfCake/PerfCake/releases/download/v${VERSION}/perfcake-v${VERSION}-javadoc.jar && unzip -o -d javadoc perfcake-v${VERSION}-javadoc.jar && rm perfcake-v${VERSION}-javadoc.jar
 mv -f javadoc _site/
 
-rm -rf docs
+wget https://github.com/PerfCake/Docs/releases/download/v${VERSION}/perfcake-docs-html.zip && unzip -o -d docs perfcake-docs-html.zip && rm perfcake-docs-html.zip
+mv -f docs _site/
+
 rm -rf schema/*.xsd
 rm -rf _site/*.sh
